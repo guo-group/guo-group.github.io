@@ -1,10 +1,11 @@
 # Basic site info
 lab_name: Guo Group @ Rutgers University
+
 description: >
   Our lab uses molecular simulations to understand and design functional soft materials, 
   with global sustainability and health challenges in mind. We work at the intersection 
   of molecular simulations, machine learning, and information theory to discover and
-  design tunable organization, structure, and function. 
+  develop tunable organization, structure, and function. 
 
 # Navigation  
 nav_items:
@@ -91,12 +92,20 @@ prospective_students:
 
 # News items
 news:
+  - date: 2024-12-11
+    content: >
+    photos:
+      - path: propla.png
+        caption: Last group meeting of 2024 with everyone in NJ
+      - path: propla.png
+        caption: Group dinner
+
   - date: 2024-09-25
     content: >
       We welcome Ben, Samiyah, and Bri to the group this Fall! 
       Mansi and Ben pass their prelims! Mansi finishes her first year and is
       awarded an NIH Biotech Training Fellowship!
-
+  
   - date: 2024-01-08
     content: >
       Welcome Mansi, our first student! 

@@ -30,14 +30,26 @@ class SiteGenerator:
             else:
                 formatted_date = date_str.strftime("%B %d, %Y")
 
+            photos_html = ""
+            if "photos" in item:
+                for photo in item["photos"]:
+                    photos_html += """
+                        <div class="news-photo">
+                            <img src="assets/{}" alt="{}">
+                            <p class="caption">{}</p>
+                        </div>
+                    """.format(photo['path'], photo['caption'], photo['caption'])
+
             news_items.append("""
                 <div class="news-item">
                     <div class="news-date">{}</div>
                     <div class="news-content">
                         {}
+                        {}
                     </div>
                 </div>
-            """.format(formatted_date, item['content']))
+            """.format(formatted_date, item['content'], photos_html))
+
         return "\n".join(news_items)
 
     def generate_research(self):
@@ -56,18 +68,15 @@ class SiteGenerator:
         """Generate team section HTML"""
         def process_bio(bio):
             """Properly process multi-line bio"""
-            # If bio is a string (which it should be with YAML >), split and clean
             if isinstance(bio, str):
-                # Split by newlines, remove any empty lines, strip whitespace
                 lines = [line.strip() for line in bio.split('\n') if line.strip()]
-                return '<br>'.join(lines)  # Use '<br>' to preserve line breaks
+                return '<br>'.join(lines)
             return bio
 
         def create_member_section(title, members, is_pi=False):
             """Create HTML for a section of team members"""
             section_html = "<h3>{}</h3>\n".format(title)
             for member in members:
-                # Process the bio 
                 bio = process_bio(member['bio'])
 
                 if is_pi:
@@ -86,14 +95,14 @@ class SiteGenerator:
                             </div>
                         </div>
                     """.format(
-                        member['image'], 
-                        member['name'], 
-                        member['name'], 
-                        member['role'], 
-                        bio, 
-                        member['email'], 
+                        member['image'],
+                        member['name'],
+                        member['name'],
+                        member['role'],
+                        bio,
+                        member['email'],
                         member.get('office', ''),
-                        ' | '.join('<a href="{}">{}</a>'.format(link['url'], link['text']) 
+                        ' | '.join('<a href="{}">{}</a>'.format(link['url'], link['text'])
                                    for link in member.get('links', []))
                     )
                 else:
@@ -107,15 +116,14 @@ class SiteGenerator:
                             </div>
                         </div>
                     """.format(
-                        member['image'], 
-                        member['name'], 
-                        member['name'], 
-                        bio, 
+                        member['image'],
+                        member['name'],
+                        member['name'],
+                        bio,
                         member['email']
                     )
             return section_html
 
-        # Add Prospective Students section
         prospective_section = """
             <h3>Prospective Students</h3>
             <div class="prospective-content">
@@ -127,7 +135,6 @@ class SiteGenerator:
             self.config.get('prospective_students', {}).get('paragraph2', '')
         )
 
-        # Combine all team sections
         return "\n".join([
             "<h2>Team</h2>",
             create_member_section("Principal Investigator", [self.config["team"]["pi"]], is_pi=True),
@@ -139,36 +146,34 @@ class SiteGenerator:
 
     def generate_site(self):
         """Generate complete website"""
-        # Create assets directory if it doesn't exist
         Path("assets").mkdir(exist_ok=True)
-
-        # Read template
         template = Path("template.html").read_text()
 
-        # Replace placeholders
         replacements = {
-            "{{lab_name}}": self.config["lab_name"],
-            "{{description}}": self.config["description"],
+            "{{lab_name}}": self.config.get("lab_name", ""),
+            "{{tagline}}": self.config.get("tagline", ""),
+            "{{description}}": self.config.get("description", ""),
             "{{navigation}}": self.generate_nav(),
             "{{news}}": self.generate_news(),
             "{{research}}": self.generate_research(),
             "{{team}}": self.generate_team(),
-            "{{bg_color}}": self.config["style"]["colors"]["bg"],
-            "{{text_color}}": self.config["style"]["colors"]["text"],
-            "{{accent_color}}": self.config["style"]["colors"]["accent"],
-            "{{secondary_color}}": self.config["style"]["colors"]["secondary"],
-            "{{header_font}}": self.config["style"]["fonts"]["headers"],
-            "{{body_font}}": self.config["style"]["fonts"]["body"],
+            "{{bg_color}}": self.config.get("style", {}).get("colors", {}).get("bg", ""),
+            "{{text_color}}": self.config.get("style", {}).get("colors", {}).get("text", ""),
+            "{{accent_color}}": self.config.get("style", {}).get("colors", {}).get("accent", ""),
+            "{{secondary_color}}": self.config.get("style", {}).get("colors", {}).get("secondary", ""),
+            "{{header_font}}": self.config.get("style", {}).get("fonts", {}).get("headers", ""),
+            "{{body_font}}": self.config.get("style", {}).get("fonts", {}).get("body", ""),
         }
 
         html = template
         for placeholder, content in replacements.items():
-            html = html.replace(placeholder, content)
+            html = html.replace(placeholder, str(content))
 
-        # Write output
         Path("index.html").write_text(html)
         print("Generated site at index.html")
 
 if __name__ == "__main__":
     generator = SiteGenerator()
     generator.generate_site()
+
+
