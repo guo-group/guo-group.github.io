@@ -1,0 +1,2 @@
+# need YAML parsing for site generation
+PyYAML==6.0.1
