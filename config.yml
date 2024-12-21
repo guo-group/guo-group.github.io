@@ -1,0 +1,111 @@
+# Basic site info
+lab_name: Guo Group @ Rutgers University
+description: >
+  Our lab uses molecular simulations to understand and design functional soft materials, 
+  with global sustainability and health challenges in mind. We work at the intersection 
+  of molecular simulations, machine learning, and information theory to discover and
+  design tunable organization, structure, and function. 
+
+# Navigation  
+nav_items:
+  - Research
+  - Team
+  - News
+
+# Research areas  
+research_areas:
+  - title: Molecular Simulation Tools
+    description: Development of new computational approaches combining machine learning and information theory.
+  
+  - title: Soft Materials Design
+    description: Understanding and engineering materials for sustainability and health applications.
+    
+  - title: Data-Driven Methods
+    description: Using machine learning to discover patterns and predict material properties.
+
+# Team members
+team:
+  pi:
+    name: Ashley Guo
+    role: Principal Investigator
+    image: ashley.jpg
+    bio: |
+      Assistant Professor, Department of Chemical & Biochemical Engineering
+    email: ashley.guo [at] rutgers [dot] edu 
+    office: Engineering C-164
+    links:
+      - text: cv
+        url: cv.pdf
+      - text: google scholar
+        url: https://scholar.google.com/citations?user=ef53_UAAAAAJ&sortby=pubdate
+
+  phd_students:
+    - name: Mansi Gokani 
+      image: mansi.jpg
+      bio: |
+        NIH Biotech Training Fellow, 2024-
+        B.S. Chemical Engineering, University of Washington, 2023
+      email: mg1992 [at] rutgers [dot] edu
+
+    - name: Benjamin Borow
+      image: ben.jpg
+      bio: |  
+        B.S. Biomedical Engineering, Rutgers University–New Brunswick, 2023
+        M.S. Chemical and Biochemical Engineering, Rutgers University–New Brunswick, 2024
+      email: bb569 [at] rutgers [dot] edu
+
+  ms_students:
+    - name: Samiyah Siddiqui
+      image: samiyah.jpg
+      bio: |
+        B.S. Chemical Engineering, Rutgers University–New Brunswick, 2024
+      email: sns173 [at] rutgers [dot] edu
+      
+    - name: Jiawen Xu
+      image: propla.png
+      bio: |
+        B.S. Chemical Engineering, University of Rochester, 2023
+      email: jx318 [at] rutgers [dot] edu
+      
+  undergraduates:
+    - name: Brianna Fea
+      image: bri.jpg
+      bio: |
+        2024-2025 Aresty Research Assistant
+      email: bzf1 [at] rutgers [dot] edu
+      
+# Prospectives
+prospective_students:
+  paragraph1: >
+    We are currently seeking motivated graduate and undergraduate students interested in modeling polypeptides and colloids with approaches that utilize machine learning and information theory. Students should have a strong background and interest in the physical sciences and mathematics. Previous experience in computer programming or molecular simulation is helpful but not required.
+  
+  paragraph2: >
+    Graduate students currently in a Ph.D. program at Rutgers are encouraged to contact Prof. Guo by email to discuss potential opportunities in the lab and research interests. Prospective CBE graduate students are encouraged to reach out as well and should apply to the <a href="https://cbe.rutgers.edu/admissions/graduate-cbe">CBE program</a>. Undergraduate students interested in joining the group are welcome to inquire about opportunities in the group by emailing Prof. Guo with a copy of their CV that includes relevant coursework.
+
+# News items
+news:
+  - date: 2024-09-25
+    content: >
+      We welcome Ben, Samiyah, and Bri to the group this Fall! 
+      Mansi and Ben pass their prelims! Mansi finishes her first year and is
+      awarded an NIH Biotech Training Fellowship!
+
+  - date: 2024-01-08
+    content: >
+      Welcome Mansi, our first student! 
+
+  - date: 2023-09-06  
+    content: >
+      Ashley Guo joins the Department of Chemical and Biochemical Engineering at Rutgers as 
+      Assistant Professor.
+
+# Style customization  
+style:
+  colors:
+    bg: "#faf4f0"
+    text: "#2d2625" 
+    accent: "#c65d4f"
+    secondary: "#8e8279"
+  fonts:
+    headers: "IBM Plex Mono"  
+    body: "Open Sans, Helvetica, Arial, sans-serif"

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guo Group @ Rutgers University</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/IBM-Plex-Mono/1.2.3/font-family/css/ibm-plex-mono.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #faf4f0;
+            --text-color: #2d2625;
+            --accent: #c65d4f;
+            --secondary: #8e8279;
+        }
+
+        body {
+            font-family: 'Open Sans, Helvetica, Arial, sans-serif', sans-serif;
+            font-weight: 300;
+            line-height: 1.7;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        h1, h2, h3, nav {
+            font-family: 'IBM Plex Mono', monospace;
+            font-weight: 500;
+        }
+
+        h1 {
+            font-size: 1.8em;
+            margin-bottom: 0.5em;
+        }
+
+        h2 {
+            font-size: 1.3em;
+            margin-top: 2em;
+            margin-bottom: 1em;
+        }
+
+        nav {
+            margin: 30px 0;
+        }
+
+        nav a {
+            margin-right: 20px;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .intro {
+            font-size: 1.1em;
+            max-width: 42em;
+            margin: 2em 0;
+        }
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin: 2em 0;
+        }
+
+        .research-area {
+            background: white;
+            padding: 25px;
+            border-radius: 4px;
+        }
+
+        .research-area h3 {
+            color: var(--accent);
+            margin: 0 0 15px 0;
+            font-size: 1em;
+        }
+
+        .news-item {
+            margin-bottom: 2em;
+        }
+
+        .news-date {
+            color: var(--secondary);
+            font-size: 0.9em;
+            margin-bottom: 0.5em;
+        }
+
+        .news-title {
+            font-size: 1.1em;
+            margin-bottom: 0.5em;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .team-member {
+            margin: 30px 0;
+            display: grid;
+            grid-template-columns: 210px 1fr;
+            gap: 30px;
+            align-items: start;
+        }
+
+        .team-member-image {
+            width: 210px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .member-info {
+            flex: 1;
+        }
+
+        .member-role {
+            color: var(--secondary);
+            font-size: 0.95em;
+        }
+
+        .prospective-content {
+            margin: 30px 0;
+        }
+
+        .prospective-content p {
+            margin-bottom: 1em;
+        }
+
+        @media (max-width: 600px) {
+            .team-member {
+                grid-template-columns: 1fr;
+                align-items: center;
+            }
+            .team-member-image {
+                max-width: 300px;
+                height: auto;
+                margin: 0 auto 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Guo Group @ Rutgers University</h1>
+        <nav>
+            <a href="#research">Research</a>
+<a href="#team">Team</a>
+<a href="#news">News</a>
+        </nav>
+    </header>
+
+    <main>
+        <p class="intro">
+            Our lab uses molecular simulations to understand and design functional soft materials,  with global sustainability and health challenges in mind. We work at the intersection  of molecular simulations, machine learning, and information theory to discover and design tunable organization, structure, and function. 
+
+        </p>
+
+        <section id="research">
+            <h2>Research</h2>
+            <div class="research-grid">
+                
+                <div class="research-area">
+                    <h3>Molecular Simulation Tools</h3>
+                    <p>Development of new computational approaches combining machine learning and information theory.</p>
+                </div>
+            
+
+                <div class="research-area">
+                    <h3>Soft Materials Design</h3>
+                    <p>Understanding and engineering materials for sustainability and health applications.</p>
+                </div>
+            
+
+                <div class="research-area">
+                    <h3>Data-Driven Methods</h3>
+                    <p>Using machine learning to discover patterns and predict material properties.</p>
+                </div>
+            
+            </div>
+        </section>
+
+        <section id="team">
+            <h2>Team</h2>
+<h3>Principal Investigator</h3>
+
+                        <div class="team-member">
+                            <img src="assets/ashley.jpg" alt="Ashley Guo" class="team-member-image">
+                            <div class="member-info">
+                                <h4>Ashley Guo</h4>
+                                <p class="role">Principal Investigator</p>
+                                <p>Assistant Professor, Department of Chemical & Biochemical Engineering</p>
+                                <p>Email: ashley.guo [at] rutgers [dot] edu<br>
+                                Office: Engineering C-164</p>
+                                <p class="member-links">
+                                    <a href="cv.pdf">cv</a> | <a href="https://scholar.google.com/citations?user=ef53_UAAAAAJ&sortby=pubdate">google scholar</a>
+                                </p>
+                            </div>
+                        </div>
+                    
+<h3>PhD Students</h3>
+
+                        <div class="team-member">
+                            <img src="assets/mansi.jpg" alt="Mansi Gokani" class="team-member-image">
+                            <div class="member-info">
+                                <h4>Mansi Gokani</h4>
+                                <p>NIH Biotech Training Fellow, 2024-<br>B.S. Chemical Engineering, University of Washington, 2023</p>
+                                <p>Email: mg1992 [at] rutgers [dot] edu</p>
+                            </div>
+                        </div>
+                    
+                        <div class="team-member">
+                            <img src="assets/ben.jpg" alt="Benjamin Borow" class="team-member-image">
+                            <div class="member-info">
+                                <h4>Benjamin Borow</h4>
+                                <p>B.S. Biomedical Engineering, Rutgers University–New Brunswick, 2023<br>M.S. Chemical and Biochemical Engineering, Rutgers University–New Brunswick, 2024</p>
+                                <p>Email: bb569 [at] rutgers [dot] edu</p>
+                            </div>
+                        </div>
+                    
+<h3>MS Students</h3>
+
+                        <div class="team-member">
+                            <img src="assets/samiyah.jpg" alt="Samiyah Siddiqui" class="team-member-image">
+                            <div class="member-info">
+                                <h4>Samiyah Siddiqui</h4>
+                                <p>B.S. Chemical Engineering, Rutgers University–New Brunswick, 2024</p>
+                                <p>Email: sns173 [at] rutgers [dot] edu</p>
+                            </div>
+                        </div>
+                    
+                        <div class="team-member">
+                            <img src="assets/propla.png" alt="Jiawen Xu" class="team-member-image">
+                            <div class="member-info">
+                                <h4>Jiawen Xu</h4>
+                                <p>B.S. Chemical Engineering, University of Rochester, 2023</p>
+                                <p>Email: jx318 [at] rutgers [dot] edu</p>
+                            </div>
+                        </div>
+                    
+<h3>Undergraduate Researchers</h3>
+
+                        <div class="team-member">
+                            <img src="assets/bri.jpg" alt="Brianna Fea" class="team-member-image">
+                            <div class="member-info">
+                                <h4>Brianna Fea</h4>
+                                <p>2024-2025 Aresty Research Assistant</p>
+                                <p>Email: bzf1 [at] rutgers [dot] edu</p>
+                            </div>
+                        </div>
+                    
+
+            <h3>Prospective Students</h3>
+            <div class="prospective-content">
+                <p>We are currently seeking motivated graduate and undergraduate students interested in modeling polypeptides and colloids with approaches that utilize machine learning and information theory. Students should have a strong background and interest in the physical sciences and mathematics. Previous experience in computer programming or molecular simulation is helpful but not required.
+</p>
+                <p>Graduate students currently in a Ph.D. program at Rutgers are encouraged to contact Prof. Guo by email to discuss potential opportunities in the lab and research interests. Prospective CBE graduate students are encouraged to reach out as well and should apply to the <a href="https://cbe.rutgers.edu/admissions/graduate-cbe">CBE program</a>. Undergraduate students interested in joining the group are welcome to inquire about opportunities in the group by emailing Prof. Guo with a copy of their CV that includes relevant coursework.
+</p>
+            </div>
+        
+        </section>
+
+        <section id="news">
+            <h2>News</h2>
+            
+                <div class="news-item">
+                    <div class="news-date">September 25, 2024</div>
+                    <div class="news-content">
+                        We welcome Ben, Samiyah, and Bri to the group this Fall!  Mansi and Ben pass their prelims! Mansi finishes her first year and is awarded an NIH Biotech Training Fellowship!
+
+                    </div>
+                </div>
+            
+
+                <div class="news-item">
+                    <div class="news-date">January 08, 2024</div>
+                    <div class="news-content">
+                        Welcome Mansi, our first student! 
+
+                    </div>
+                </div>
+            
+
+                <div class="news-item">
+                    <div class="news-date">September 06, 2023</div>
+                    <div class="news-content">
+                        Ashley Guo joins the Department of Chemical and Biochemical Engineering at Rutgers as  Assistant Professor.
+
+                    </div>
+                </div>
+            
+        </section>
+    </main>
+</body>
+</html>
