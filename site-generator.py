@@ -30,25 +30,35 @@ class SiteGenerator:
             else:
                 formatted_date = date_str.strftime("%B %d, %Y")
 
+            # Generate all photo HTML together in a single container
             photos_html = ""
             if "photos" in item:
-                for photo in item["photos"]:
-                    photos_html += """
+                # Start a single photos container
+                photos_html = """
+                    <div class="news-photos">
+                """
+                # Add all photos (up to 3) inside the same container
+                for photo in item["photos"][:3]:
+                    photos_html += f"""
                         <div class="news-photo">
-                            <img src="assets/{}" alt="{}">
-                            <p class="caption">{}</p>
+                            <img src="assets/{photo['path']}" alt="{photo['caption']}">
+                            <p class="caption">{photo['caption']}</p>
                         </div>
-                    """.format(photo['path'], photo['caption'], photo['caption'])
+                    """
+                # Close the container
+                photos_html += """
+                    </div>
+                """
 
-            news_items.append("""
+            news_items.append(f"""
                 <div class="news-item">
-                    <div class="news-date">{}</div>
+                    <div class="news-date">{formatted_date}</div>
                     <div class="news-content">
-                        {}
-                        {}
+                        {item['content']}
+                        {photos_html}
                     </div>
                 </div>
-            """.format(formatted_date, item['content'], photos_html))
+            """)
 
         return "\n".join(news_items)
 
@@ -175,5 +185,3 @@ class SiteGenerator:
 if __name__ == "__main__":
     generator = SiteGenerator()
     generator.generate_site()
-
-

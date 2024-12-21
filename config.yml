@@ -95,9 +95,9 @@ news:
   - date: 2024-12-11
     content: >
     photos:
-      - path: propla.png
-        caption: Last group meeting of 2024 with everyone in NJ
-      - path: propla.png
+      - path: 2024_dec_group_meeting.jpg
+        caption: Last full group meeting of 2024
+      - path: 2024_dec_group_dinner.jpg
         caption: Group dinner
 
   - date: 2024-09-25
