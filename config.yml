@@ -77,10 +77,17 @@ team:
 # Prospectives
 prospective_students:
   paragraph1: >
-    We are currently seeking motivated graduate and undergraduate students interested in modeling polypeptides and colloids with approaches that utilize machine learning and information theory. Students should have a strong background and interest in the physical sciences and mathematics. Previous experience in computer programming or molecular simulation is helpful but not required.
+    We are seeking curious and motivated students who are interested in data- and information-driven 
+    modeling of biomolecules, polymers, and colloids. Students should have a strong background and 
+    interest in the physical sciences and mathematics. Previous experience in computer programming 
+    or molecular simulation is helpful but not required.
   
   paragraph2: >
-    Graduate students currently in a Ph.D. program at Rutgers are encouraged to contact Prof. Guo by email to discuss potential opportunities in the lab and research interests. Prospective CBE graduate students are encouraged to reach out as well and should apply to the <a href="https://cbe.rutgers.edu/admissions/graduate-cbe">CBE program</a>. Undergraduate students interested in joining the group are welcome to inquire about opportunities in the group by emailing Prof. Guo with a copy of their CV that includes relevant coursework.
+    Current and prospective Ph.D. students are encouraged to contact Prof. Guo directly to discuss 
+    potential opportunities and research interests. Prospective graduate students should apply to the 
+    <a href="https://cbe.rutgers.edu/admissions/graduate-cbe">Rutgers CBE program</a>. Highly motivated
+    undergraduates are welcome to inquire about opportunities by emailing Prof. Guo with a copy 
+    of their CV and details on their relevant completed coursework. 
 
 # News items
 news:
