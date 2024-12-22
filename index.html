@@ -123,13 +123,17 @@
             margin-bottom: 0.5em;
         }
 
-        .news-photos {
-            display: flex;
-            flex-direction: row;
-            gap: 8px;
-            margin: 20px 0;
-            justify-content: flex-start;
-        }
+		.news-photos {
+    		display: flex;
+    		flex-direction: row;
+    		overflow-x: auto;  /* Allow horizontal scrolling */
+    		gap: 8px;
+    		margin: 20px 0;
+    		padding-bottom: 10px;  /* Add some padding for scrollbar */
+    		-webkit-overflow-scrolling: touch;  /* Smooth scrolling on iOS */
+    		scrollbar-width: thin;  /* Thin scrollbar on Firefox */
+    		scrollbar-color: rgba(0,0,0,0.2) transparent;  /* Scrollbar color */
+		}
 
         .news-photo {
             flex: 0 0 auto;
