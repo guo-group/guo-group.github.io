@@ -7,6 +7,8 @@ description: >
   of molecular simulations, machine learning, and information theory to discover and
   develop tunable organization, structure, and function. 
 
+header_image: propla.png
+
 # Navigation  
 nav_items:
   - Research
@@ -15,14 +17,14 @@ nav_items:
 
 # Research areas  
 research_areas:
-  - title: Molecular Simulation Tools
-    description: Development of new computational approaches combining machine learning and information theory.
+  - title: Discovering Soft Materials for Sustainability
+    description: Designing bio-inspired materials for environmental challenges, focusing on peptide-based systems for nanoplastic capture from water.
   
-  - title: Soft Materials Design
-    description: Understanding and engineering materials for sustainability and health applications.
+  - title: Designing Self-Assembly Pathways
+    description: Understanding molecular organization and phase behavior in soft materials through molecular simulations.
     
-  - title: Data-Driven Methods
-    description: Using machine learning to discover patterns and predict material properties.
+  - title: Developing Molecular Design Tools
+    description: Creating computational approaches that combine molecular simulations with information theory to guide materials discovery.
 
 # Team members
 team:
@@ -36,7 +38,7 @@ team:
     office: Engineering C-164
     links:
       - text: cv
-        url: cv.pdf
+        url: assets/cv.pdf
       - text: google scholar
         url: https://scholar.google.com/citations?user=ef53_UAAAAAJ&sortby=pubdate
 
@@ -96,7 +98,7 @@ news:
     content: >
     photos:
       - path: 2024_dec_group_meeting.jpg
-        caption: Last full group meeting of 2024
+        caption: Last full-house group meeting of 2024
       - path: 2024_dec_group_dinner.jpg
         caption: Group dinner
 
@@ -120,7 +122,8 @@ style:
   colors:
     bg: "#faf4f0"
     text: "#2d2625" 
-    accent: "#c65d4f"
+      #accent: "#c65d4f"
+    accent: "#b44639"
     secondary: "#8e8279"
   fonts:
     headers: "IBM Plex Mono"  
