@@ -94,6 +94,10 @@ prospective_students:
 
 # News items
 news:
+  - date: 2025-02-17
+    content: >
+      Our lab receives a New Jersey Health Foundation grant. Thank you for the support! 
+
   - date: 2024-12-11
     content: >
     photos:
@@ -107,7 +111,11 @@ news:
       We welcome Ben, Samiyah, and Bri to the group this Fall! 
       Mansi and Ben pass their prelims! Mansi finishes her first year and is
       awarded an NIH Biotech Training Fellowship!
-  
+
+  - date: 2024-07-29
+    content: >
+      Collaboration begins with Colgate-Palmolive. Thank you for the support! 
+
   - date: 2024-01-08
     content: >
       Welcome Mansi, our first student! 
