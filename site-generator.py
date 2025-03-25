@@ -13,17 +13,17 @@ class SiteGenerator:
 
     def generate_header_image(self):
         """Generate header image HTML"""
-        # Check if a header image is specified in config, 
+        # Check if a header image is specified in config,
         # or use the first team member's image as a fallback
         header_image = self.config.get("header_image")
-        
+
         if not header_image:
             # Try to get first team member's image
             header_image = self.config.get("team", {}).get("pi", {}).get("image")
-        
+
         if header_image:
             return f'<img src="assets/{header_image}" alt="Lab Header Image" class="header-image">'
-        
+
         return ""  # Return empty string if no image found
 
     def generate_nav(self):
