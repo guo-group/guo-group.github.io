@@ -57,26 +57,34 @@ team:
         M.S. Chemical and Biochemical Engineering, Rutgers University–New Brunswick, 2024
       email: bb569 [at] rutgers [dot] edu
 
-  ms_students:
     - name: Samiyah Siddiqui
       image: samiyah.jpg
       bio: |
         B.S. Chemical Engineering, Rutgers University–New Brunswick, 2024
       email: sns173 [at] rutgers [dot] edu
       
-    - name: Jiawen Xu
-      image: R.png
+  ms_students:
+    - name: Kaelyn Chang
+      image: kaelyn.jpg
       bio: |
-        B.S. Chemical Engineering, University of Rochester, 2023
-      email: jx318 [at] rutgers [dot] edu
+        B.S. Chemical and Biochemical Engineering, Rutgers University-New Brunswick, 2025
+      email: kc1228 [at] rutgers [dot] edu
       
   undergraduates:
     - name: Brianna Fea
       image: bri.jpg
       bio: |
         2024-2025 Aresty Research Assistant
+        Rutgers CBE c/o 2027
       email: bzf1 [at] rutgers [dot] edu
-      
+
+    - name: Jean Chen
+      image: jean.jpg
+      bio: | 
+        2025-2026 Aresty Research Assistant
+        Rutgers CBE c/o 2028
+      email: jc3188 [at] rutgers [dot] edu
+
 # Prospectives
 prospective_students:
   paragraph1: >
@@ -94,6 +102,16 @@ prospective_students:
 
 # News items
 news:
+  - date: 2025-05-19
+    content: >
+      Welcome Kaelyn and Jean to the group! 
+  - date: 2025-04-25
+    content: >
+      Bri presents at her Aresty work at the CBE Undergraduate Symposium, AIChE Mid-Atlantic Regional 
+      Conference, and at the Aresty Undergraduate Symposium
+    photos:
+      - path: 2025_apr_bri_regional_aiche.jpg
+        caption: Bri at AIChE Mid-Atlantic Student Conference
   - date: 2025-02-17
     content: >
       Our lab receives a New Jersey Health Foundation grant. Thank you for the support! 
