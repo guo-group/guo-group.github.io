@@ -85,6 +85,10 @@ team:
         Rutgers CBE c/o 2028
       email: jc3188 [at] rutgers [dot] edu
 
+  alums:
+    - name: Julietta Straviou, Georgia Tech CBE, Summer Visiting Student 2025
+
+
 # Prospectives
 prospective_students:
   paragraph1: >
@@ -104,7 +108,7 @@ prospective_students:
 news:
   - date: 2025-05-19
     content: >
-      Welcome Kaelyn and Jean to the group! 
+      Welcome Kaelyn and Jean to the group! Julietta joins us for the summer from Georgia Tech! 
   - date: 2025-04-25
     content: >
       Bri presents at her Aresty work at the CBE Undergraduate Symposium, AIChE Mid-Atlantic Regional 

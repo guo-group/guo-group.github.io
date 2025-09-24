@@ -89,6 +89,7 @@ class SiteGenerator:
             """.format(area['title'], area['description']))
         return "\n".join(areas)
 
+
     def generate_team(self):
         """Generate team section HTML"""
         def process_bio(bio):
@@ -149,6 +150,15 @@ class SiteGenerator:
                     )
             return section_html
 
+        def create_alumni_section(title, alumni):
+            """Create HTML for alumni section with simple format"""
+            section_html = "<h3>{}</h3>\n".format(title)
+            section_html += "<div class=\"alumni-list\">\n"
+            for alum in alumni:
+                section_html += "<p>{}</p>\n".format(alum['name'])
+            section_html += "</div>\n"
+            return section_html
+
         prospective_section = """
             <h3>Prospective Students</h3>
             <div class="prospective-content">
@@ -166,6 +176,7 @@ class SiteGenerator:
             create_member_section("PhD Students", self.config["team"]["phd_students"]),
             create_member_section("MS Students", self.config["team"]["ms_students"]),
             create_member_section("Undergraduate Researchers", self.config["team"]["undergraduates"]),
+            create_alumni_section("Lab Alumni", self.config["team"]["alums"]),
             prospective_section
         ])
 
