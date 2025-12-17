@@ -138,7 +138,7 @@ class SiteGenerator:
                             <div class="member-info">
                                 <h4>{}</h4>
                                 <p>{}</p>
-                                <p>Email: {}</p>
+                                <p>{}</p>
                             </div>
                         </div>
                     """.format(

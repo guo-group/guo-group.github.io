@@ -7,7 +7,7 @@ description: >
   of molecular simulations, machine learning, and information theory to discover and
   develop tunable organization, structure, and function. 
 
-header_image: propla.png
+header_image: claw.png
 
 # Navigation  
 nav_items:
@@ -53,16 +53,10 @@ team:
     - name: Benjamin Borow
       image: ben.jpg
       bio: |  
-        B.S. Biomedical Engineering, Rutgers University–New Brunswick, 2023
         M.S. Chemical and Biochemical Engineering, Rutgers University–New Brunswick, 2024
+        B.S. Biomedical Engineering, Rutgers University–New Brunswick, 2023
       email: bb569 [at] rutgers [dot] edu
 
-    - name: Samiyah Siddiqui
-      image: samiyah.jpg
-      bio: |
-        B.S. Chemical Engineering, Rutgers University–New Brunswick, 2024
-      email: sns173 [at] rutgers [dot] edu
-      
   ms_students:
     - name: Kaelyn Chang
       image: kaelyn.jpg
@@ -86,8 +80,8 @@ team:
       email: jc3188 [at] rutgers [dot] edu
 
   alums:
-    - name: Julietta Straviou, Georgia Tech CBE, Summer Visiting Student 2025
-
+    - name: Samiyah Siddiqui, graduate research assistant, 2024-2025
+    - name: Julietta Straviou (Georgia Tech CBE), summer visiting undergraduate, 2025
 
 # Prospectives
 prospective_students:
