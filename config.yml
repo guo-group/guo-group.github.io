@@ -79,6 +79,12 @@ team:
         Rutgers CBE c/o 2028
       email: jc3188 [at] rutgers [dot] edu
 
+    - name: Sophia Carlson
+      image: sophia.jpg
+      bio: | 
+        Rutgers CBE c/o 2027
+      email: sac457 [at] rutgers [dot] edu 
+
   alums:
     - name: Samiyah Siddiqui, graduate research assistant, 2024-2025
     - name: Julietta Straviou (Georgia Tech CBE), summer visiting undergraduate, 2025
@@ -100,6 +106,10 @@ prospective_students:
 
 # News items
 news:
+  - date: 2026-02-19
+    content: >
+      Mansi presents her work at the Biophysical Society Annual Meeting in San Francisco, supported by 
+      her NIH Training Fellowship and the Rutgers SGS Research & Travel Award. Thank you for the support! 
   - date: 2025-12-10
     content: >
       Mansi passes her proposal defense and becomes our group's first PhD candidate!
@@ -114,7 +124,7 @@ news:
   - date: 2025-04-25
     content: >
       Bri presents at her Aresty work at the CBE Undergraduate Symposium, AIChE Mid-Atlantic Regional 
-      Conference, and at the Aresty Undergraduate Symposium
+      Conference, and at the Aresty Undergraduate Symposium.
     photos:
       - path: 2025_apr_bri_regional_aiche.jpg
         caption: Bri at AIChE Mid-Atlantic Student Conference
