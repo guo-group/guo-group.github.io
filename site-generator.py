@@ -164,10 +164,12 @@ class SiteGenerator:
             <div class="prospective-content">
                 <p>{}</p>
                 <p>{}</p>
+                <p>{}</p>
             </div>
         """.format(
             self.config.get('prospective_students', {}).get('paragraph1', ''),
-            self.config.get('prospective_students', {}).get('paragraph2', '')
+            self.config.get('prospective_students', {}).get('paragraph2', ''),
+            self.config.get('prospective_students', {}).get('paragraph3', '')
         )
 
         return "\n".join([
