@@ -113,6 +113,12 @@ prospective_students:
 
 # News items
 news:
+  - date: 2026-04-24
+    content: > 
+      Jean presents her Aresty RA work at the Aresty Undergraduate Research Symposium. Nice work!
+    photos:
+      - path: 2026_apr_jean_aresty.jpg
+        caption: Jean at Annual Aresty Symposium
   - date: 2026-02-19
     content: >
       Mansi presents her work at the Biophysical Society Annual Meeting in San Francisco, supported by 
@@ -130,7 +136,7 @@ news:
       Welcome Kaelyn and Jean to the group! Julietta joins us for the summer from Georgia Tech! 
   - date: 2025-04-25
     content: >
-      Bri presents at her Aresty work at the CBE Undergraduate Symposium, AIChE Mid-Atlantic Regional 
+      Bri presents her Aresty work at the CBE Undergraduate Symposium, AIChE Mid-Atlantic Regional 
       Conference, and at the Aresty Undergraduate Symposium.
     photos:
       - path: 2025_apr_bri_regional_aiche.jpg
