@@ -4,293 +4,418 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guo Group @ Rutgers University</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/IBM-Plex-Mono/1.2.3/font-family/css/ibm-plex-mono.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #faf4f0;
-            --text-color: #2d2625;
+            --bg: #faf4f0;
+            --text: #2d2625;
             --accent: #b44639;
             --secondary: #8e8279;
+            --header-font: 'IBM Plex Mono', monospace;
+            --body-font: Helvetica, Arial, sans-serif;
+            --sidebar-width: 13rem;
         }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: 'Open Sans, Helvetica, Arial, sans-serif', sans-serif;
-            font-weight: 300;
-            line-height: 1.7;
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            position: relative; /* For the back-to-top button positioning */
-            padding-bottom: 60px; /* Space for the back-to-top button */
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--body-font);
+            line-height: 1.6;
+			font-weight: 300;
         }
 
-        .header {
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
-        }
-
-        .header-image {
-            position: absolute;
-            top: 0;
-            right: 0;
-            max-width: 250px;
-            max-height: 250px;
-            object-fit: contain;
-        }
-
-        h1, h2, h3, nav {
-            font-family: 'IBM Plex Mono', monospace;
+        h1, h2, h3, h4 {
+            font-family: var(--header-font);
+            color: var(--text);
             font-weight: 500;
         }
 
-        h1 {
-            font-size: 1.8em;
-            margin-bottom: 0.5em;
+        a { color: var(--accent); }
+
+        /* ---------- Sidebar navigation ---------- */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: var(--sidebar-width);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding: 2rem 1.5rem;
+            background: var(--bg);
+            border-right: 1px solid rgba(0, 0, 0, 0.08);
+            overflow-y: auto;
+        }
+
+		.sidebar .lab-name {
+    		font-family: var(--header-font);
+    		font-size: 1.5rem;        /* was 1.05rem */
+    		font-weight: 700;         /* was 600 */
+    		line-height: 1.25;
+    		margin-bottom: 2rem;      
+    		color: #CC0033;
+    		text-decoration: none;
+		}
+
+        /*.sidebar .lab-name {
+            font-family: var(--header-font);
+            font-size: 1.05rem;
+            font-weight: 600;
+            line-height: 1.35;
+            margin-bottom: 1.5rem;
             color: #CC0033;
+            text-decoration: none;
+        }*/
+
+        .navigation {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
         }
 
-        /* Rest of the existing styles remain the same */
-        h2 {
-            font-size: 1.3em;
-            margin-top: 2em;
-            margin-bottom: 1em;
+        .navigation a {
+            font-family: var(--header-font);
+            font-size: 0.95rem;
+            text-decoration: none;
+            color: var(--secondary);
+            padding: 0.25rem 0;
+            border-left: 2px solid transparent;
+            padding-left: 0.75rem;
+            transition: color 0.15s ease, border-color 0.15s ease;
         }
 
-        nav {
-            margin: 30px 0;
-        }
-
-        /* Base styles for all links */
-        a {
+        .navigation a:hover {
             color: var(--accent);
-            text-decoration: none;
-            transition: color 0.2s ease;
         }
 
-        a:hover {
-            color: #CC0033;
-            text-decoration: underline;
+        .navigation a.active {
+            color: var(--accent);
+            border-left-color: var(--accent);
         }
 
-        /* Override styles specifically for navigation links */
-        nav a {
-            color: var(--text-color);
-            margin-right: 20px;
-            text-decoration: none;
+        /* ---------- Main content ---------- */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            max-width: 58rem;
+            padding: 3rem 2.5rem 6rem;
         }
 
-        nav a:hover {
-            color: #CC0033;
-            text-decoration: none;
+        .header-image {
+            width: 100%;
+            max-height: 22rem;
+            object-fit: cover;
+            border-radius: 6px;
+            margin: 0 0 2rem;
         }
 
-        .intro {
-            font-size: 1.1em;
-            max-width: 42em;
-            margin: 2em 0;
+        .description {
+            font-size: 1.05rem;
+            color: var(--text);
+            margin-bottom: 3rem;
         }
 
-        .research-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin: 2em 0;
+        section {
+            scroll-margin-top: 2rem;
+            margin-bottom: 4rem;
         }
 
+        section > h2 {
+            font-size: 1.6rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ---------- Research ---------- */
         .research-area {
-            background: white;
-            padding: 25px;
-            border-radius: 4px;
+            margin-bottom: 1.5rem;
         }
 
         .research-area h3 {
             color: var(--accent);
-            margin: 0 0 15px 0;
-            font-size: 1em;
+            margin-bottom: 0.3rem;
+            font-size: 1.15rem;
         }
 
-        .news-item {
-            margin-bottom: 1.5em; /* Reduced from 2em */
-        }
+        .research-area p { 
+			margin-top: 0; 
+		}
 
-        .news-date {
+        /* ---------- Team ---------- */
+        #team h3 {
+            font-size: 1.25rem;
+            margin-top: 2rem;
             color: var(--secondary);
-            font-size: 0.9em;
-            margin-bottom: 0.3em; /* Reduced from 0.5em */
-        }
-
-        .news-content {
-            margin: 0; /* Remove any default margins */
-        }
-
-        .news-photos {
-            display: flex;
-            flex-direction: row;
-            overflow-x: auto;  /* Allow horizontal scrolling */
-            gap: 8px;
-            margin: 10px 0 0 0; /* Reduced top margin from 20px to 10px */
-            padding: 0; /* Remove all padding */
-            -webkit-overflow-scrolling: touch;  /* Smooth scrolling on iOS */
-            scrollbar-width: thin;  /* Thin scrollbar on Firefox */
-            scrollbar-color: rgba(0,0,0,0.2) transparent;  /* Scrollbar color */
-            line-height: 0; /* Remove line height spacing */
-        }
-
-        .news-photo {
-            flex: 0 0 auto;
-            width: 250px;
-            margin: 0; /* Remove all margins */
-            line-height: normal; /* Reset line height for captions */
-        }
-
-        .news-photo img {
-            width: 250px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 4px;
-            display: block; /* Prevents default inline spacing */
-            margin: 0; /* Ensure no margins */
-        }
-
-        .news-photo .caption {
-            font-size: 0.9em;
-            color: var(--secondary);
-            margin-top: 4px; /* Reduced from 8px */
-            margin-bottom: 0;
-            padding: 0;
-            text-align: center;
         }
 
         .team-member {
-            margin: 30px 0;
-            display: grid;
-            grid-template-columns: 180px 1fr;
-            gap: 30px;
-            align-items: start;
+            display: flex;
+            gap: 1.25rem;
+            margin-bottom: 1.75rem;
+            align-items: flex-start;
         }
 
         .team-member-image {
-            width: 180px;
-            height: auto;
-            object-fit: contain;
+            width: 7rem;
+            height: 7rem;
+            object-fit: cover;
+            border-radius: 6px;
+            flex-shrink: 0;
+            background: rgba(0, 0, 0, 0.05);
         }
 
-        .member-info {
-            flex: 1;
+        .member-info h4 {
+            margin: 0 0 0.2rem;
+            font-size: 1.1rem;
         }
 
-        .member-role {
-            color: var(--secondary);
-            font-size: 0.95em;
+        .member-info p { margin: 0.15rem 0; }
+
+        .member-info .role {
+            color: var(--accent);
+            font-style: italic;
         }
 
-        .prospective-content {
-            margin: 30px 0;
+        .member-links a {
+            font-family: var(--header-font);
+            font-size: 0.9rem;
+        }
+
+        .alumni-list p {
+            margin: 0.3rem 0;
+            color: var(--text);
         }
 
         .prospective-content p {
-            margin-bottom: 1em;
+            margin-bottom: 1rem;
         }
 
-        /* Back to top button styles */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: var(--accent);
-            color: white;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            text-align: center;
-            line-height: 50px;
-            font-size: 20px;
+        /* ---------- News ---------- */
+        .news-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .news-date {
+            font-family: var(--header-font);
+            font-size: 0.85rem;
+            color: var(--secondary);
+            flex-shrink: 0;
+            width: 10rem;
+            white-space: nowrap;
+            padding-top: 0.1rem;
+        }
+
+        .news-content { flex: 1; }
+
+        .news-content > :first-child { margin-top: 0; }
+
+        .news-photos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 0.75rem;
+        }
+
+        .news-photo {
+            width: 12rem;
+        }
+
+        .news-photo img {
+            width: 100%;
+            border-radius: 4px;
+            display: block;
+        }
+
+        .news-photo .caption {
+            font-size: 0.8rem;
+            color: var(--secondary);
+            margin: 0.3rem 0 0;
+        }
+
+        /* ---------- Publications ---------- */
+        .scholar-note {
+            font-size: 0.95rem;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+        }
+
+        .pub-item {
+            display: flex;
+            gap: 1.25rem;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            align-items: flex-start;
+        }
+
+        .pub-number {
+            font-family: var(--header-font);
+            font-size: 0.85rem;
+            color: var(--accent);
+            flex-shrink: 0;
+            width: 2.5rem;
+            padding-top: 0.15rem;
+        }
+
+        .pub-image {
+            flex-shrink: 0;
+            width: 8rem;
+        }
+
+        .pub-image img {
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            display: block;
+        }
+
+        .pub-details {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .pub-title {
+            margin: 0 0 0.35rem;
+            font-size: 1.05rem;
+            line-height: 1.35;
+        }
+
+        .pub-authors {
+            margin: 0 0 0.35rem;
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+
+        .pub-citation {
+            margin: 0 0 0.4rem;
+            font-size: 0.9rem;
+            color: var(--secondary);
+        }
+
+        .pub-doi {
+            font-family: var(--header-font);
+            font-size: 0.85rem;
             text-decoration: none;
-            opacity: 0.7;
-            transition: opacity 0.3s;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            z-index: 1000;
-            display: none; /* Initially hidden */
         }
 
-        .back-to-top:hover {
-            opacity: 1;
-            text-decoration: none;
+        .pub-doi:hover {
+            text-decoration: underline;
         }
 
-        @media (max-width: 600px) {
-            .team-member {
-                grid-template-columns: 1fr;
-                align-items: center;
-            }
-            .team-member-image {
-                max-width: 300px;
+        /* ---------- Mobile ---------- */
+        @media (max-width: 720px) {
+            .sidebar {
+                position: sticky;
                 height: auto;
-                margin: 0 auto 20px;
+                width: 100%;
+                flex-direction: row;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+                border-right: none;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+                padding: 1rem 1.25rem;
+                z-index: 10;
             }
-            .header-image {
-                position: static;
-                display: block;
-                margin: 20px auto;
-                max-width: 150px;
+
+            .sidebar .lab-name {
+                margin-bottom: 0;
+                font-size: 0.95rem;
+                flex-basis: 100%;
             }
-            .back-to-top {
-                width: 40px;
-                height: 40px;
-                line-height: 40px;
-                font-size: 16px;
+
+            .navigation {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 1.25rem;
             }
+
+            .navigation a {
+                border-left: none;
+                padding-left: 0;
+            }
+
+            .navigation a.active {
+                border-left: none;
+                border-bottom: 2px solid var(--accent);
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 2rem 1.25rem 5rem;
+            }
+
+            .team-member { flex-direction: column; }
+
+            .news-item { flex-direction: column; gap: 0.35rem; }
+
+            .news-date { width: auto; }
+
+            .pub-item {
+                flex-wrap: wrap;
+                gap: 0.75rem;
+            }
+            .pub-number { width: auto; }
+            .pub-image { width: 6rem; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header">
-            <h1>Guo Group @ Rutgers University</h1>
-            <img src="assets/claw.png" alt="Lab Header Image" class="header-image">
-        </div>
-        <nav>
+    <aside class="sidebar">
+        <a href="#top" class="lab-name">Guo Group @ Rutgers University</a>
+        <nav class="navigation">
             <a href="#research">Research</a>
 <a href="#team">Team</a>
 <a href="#news">News</a>
+<a href="#publications">Publications</a>
         </nav>
-    </header>
+    </aside>
 
-    <main>
-        <p class="intro">
-            Our lab uses molecular simulations to understand and design functional soft materials,  with global sustainability and health challenges in mind. We work at the intersection  of molecular simulations, machine learning, and information theory to discover and develop tunable organization, structure, and function. 
-
-        </p>
+    <main class="main-content" id="top">
+        
+        <p class="description">Our lab uses molecular simulation, information theory, and machine learning to  understand and design functional soft materials, with global sustainability and  health challenges in mind. We are especially drawn to molecular organization that  is hard to characterize (whether from disorder, irregularity, or the lack of an  obvious order parameter) and to finding new ways to measure and tune that organization in service of function.
+</p>
 
         <section id="research">
             <h2>Research</h2>
-            <div class="research-grid">
-                
+            
                 <div class="research-area">
-                    <h3>Discovering Soft Materials for Sustainability</h3>
-                    <p>Designing bio-inspired materials for environmental challenges, focusing on peptide-based systems for nanoplastic capture from water.</p>
+                    <h3>Quantifying Molecular Order from Information</h3>
+                    <p>We measure the intrinsic organization of molecular systems directly from  configuration and trajectory data, drawing on information theory to capture  order even when it isn't obvious to the eye or expressible as a conventional  order parameter. We are exploring how such measures might serve as design  variables for tuning molecular assemblies.
+</p>
                 </div>
             
 
                 <div class="research-area">
-                    <h3>Designing Self-Assembly Pathways</h3>
-                    <p>Understanding molecular organization and phase behavior in soft materials through molecular simulations.</p>
+                    <h3>Soft Materials for a Sustainable Environment</h3>
+                    <p>We design peptide-based materials that selectively bind pollutants, with a current focus on sensing and capturing nanoplastics from water.
+</p>
                 </div>
             
 
                 <div class="research-area">
-                    <h3>Developing Molecular Design Tools</h3>
-                    <p>Creating computational approaches that combine molecular simulations with information theory to guide materials discovery.</p>
+                    <h3>Biomolecular Recognition and Assembly</h3>
+                    <p>We investigate the forces that drive binding and aggregation in biomolecular  systems. We are especially interested in how assembly is shaped by disordered  or irregular targets (e.g., nanoparticle surfaces, aggregation-prone proteins) and how those interactions influence function.
+</p>
                 </div>
             
-            </div>
         </section>
+
+		
+		<section id="talks">
+    		
+		</section>
+		
 
         <section id="team">
             <h2>Team</h2>
@@ -300,12 +425,11 @@
                             <img src="assets/ashley.jpg" alt="Ashley Guo" class="team-member-image">
                             <div class="member-info">
                                 <h4>Ashley Guo</h4>
-                                <p class="role">Principal Investigator</p>
                                 <p>Assistant Professor, Department of Chemical & Biochemical Engineering</p>
                                 <p>Email: ashley.guo [at] rutgers [dot] edu<br>
                                 Office: Engineering C-164</p>
                                 <p class="member-links">
-                                    <a href="assets/cv.pdf">cv</a> | <a href="https://scholar.google.com/citations?user=ef53_UAAAAAJ&sortby=pubdate">google scholar</a>
+                                    <a href="assets/cv.pdf">cv</a> | <a href="https://scholar.google.com/citations?user=ef53_UAAAAAJ&sortby=pubdate">google scholar</a> | <a href="https://cbe.rutgers.edu/ashley-guo">Rutgers CBE</a>
                                 </p>
                             </div>
                         </div>
@@ -365,13 +489,23 @@
                             <img src="assets/sophia.jpg" alt="Sophia Carlson" class="team-member-image">
                             <div class="member-info">
                                 <h4>Sophia Carlson</h4>
-                                <p>Rutgers CBE c/o 2027</p>
+                                <p>2026-2027 JJ Slade Scholar<br>Rutgers CBE c/o 2027</p>
                                 <p>sac457 [at] rutgers [dot] edu</p>
+                            </div>
+                        </div>
+                    
+                        <div class="team-member">
+                            <img src="assets/laasya.jpg" alt="Laasya Chintala" class="team-member-image">
+                            <div class="member-info">
+                                <h4>Laasya Chintala</h4>
+                                <p>2026 Aresty Summer Science Student<br>Rutgers Biological Sciences c/o 2029</p>
+                                <p>lc1414 [at] rutgers [dot] edu</p>
                             </div>
                         </div>
                     
 <h3>Lab Alumni</h3>
 <div class="alumni-list">
+<p>Bisneili Amaya (U. of Notre Dame CBE), summer visiting undergraduate, 2026</p>
 <p>Samiyah Siddiqui, graduate research assistant, 2024-2025</p>
 <p>Julietta Straviou (Georgia Tech CBE), summer visiting undergraduate, 2025</p>
 </div>
@@ -379,11 +513,11 @@
 
             <h3>Prospective Students</h3>
             <div class="prospective-content">
-                <p>We are seeking curious and motivated students who are interested in data- and information-driven  modeling of biomolecules, polymers, and colloids. Students should have a strong background and  interest in the physical sciences and mathematics. Previous experience in computer programming  or molecular simulation is helpful but not required.
+                <p>We are seeking curious and motivated students who are interested in data- and information-driven modeling of biomolecules, polymers, and colloids. Students should have a strong background and interest in the physical sciences and mathematics. Previous experience in computer programming or molecular simulation is helpful but not required.
 </p>
-                <p>Current and prospective Ph.D. students are encouraged to contact Prof. Guo directly to discuss  potential opportunities and research interests. Prospective graduate students should apply to the  <a href="https://cbe.rutgers.edu/admissions/graduate-cbe">Rutgers CBE program</a>. 
+                <p>Current and prospective Ph.D. students are encouraged to contact Prof. Guo directly to discuss potential opportunities and research interests. Prospective graduate students should apply to the <a href="https://cbe.rutgers.edu/admissions/graduate-cbe">Rutgers CBE program</a>.
 </p>
-                <p>Highly motivated undergraduates are welcome to inquire about opportunities by (1) emailing Prof.  Guo with a copy of their resume and details on their relevant coursework, or (2) applying through  the <a href="https://aresty.rutgers.edu/">Aresty Research Center</a>. We  appreciate the recent influx of high schoolers interested in doing research with us; high school  researchers must join the lab through organized programs so that they can receive sufficient  mentorship and structure. Undergraduates and high school researchers are expected to attend weekly group meetings and actively contribute to them.
+                <p>Highly motivated undergraduates are welcome to inquire about opportunities by (1) emailing Prof. Guo with a copy of their resume and details on their relevant coursework, or (2) applying through the <a href="https://aresty.rutgers.edu/">Aresty Research Center</a>. We appreciate the recent influx of high schoolers interested in doing research with us; high school researchers must join the lab through organized programs so that they can receive sufficient mentorship and structure. Undergraduates and high school researchers are expected to attend weekly group meetings and actively contribute to them.
 </p>
             </div>
         
@@ -393,9 +527,47 @@
             <h2>News</h2>
             
                 <div class="news-item">
+                    <div class="news-date">July 30, 2026</div>
+                    <div class="news-content">
+                        Laasya presents her summer research at the Aresty Summer Research Symposium.
+
+                        
+                    <div class="news-photos">
+                
+                        <div class="news-photo">
+                            <img src="assets/2026_jul_laasya_aresty.jpg" alt="">
+                            
+                        </div>
+                    
+                    </div>
+                
+                    </div>
+                </div>
+            
+
+                <div class="news-item">
+                    <div class="news-date">June 5, 2026</div>
+                    <div class="news-content">
+                        Kaelyn presents her work at the 2nd Annual Rutgers Chemical Physics (RCP) Symposium.
+
+                        
+                    <div class="news-photos">
+                
+                        <div class="news-photo">
+                            <img src="assets/2026_jun_kaelyn_rcp.jpg" alt="">
+                            
+                        </div>
+                    
+                    </div>
+                
+                    </div>
+                </div>
+            
+
+                <div class="news-item">
                     <div class="news-date">May 14, 2026</div>
                     <div class="news-content">
-                        Mansi is awarded the 2026 Rutgers CBE Distinguished Service Award! 
+                        Mansi is awarded the 2026 Rutgers CBE Distinguished Service Award!
 
                         
                     </div>
@@ -403,9 +575,9 @@
             
 
                 <div class="news-item">
-                    <div class="news-date">May 07, 2026</div>
+                    <div class="news-date">May 7, 2026</div>
                     <div class="news-content">
-                        Kaelyn is awarded a Rutgers School of Engineering Outstanding Graduate Student Award. Well done! 
+                        Kaelyn is awarded a Rutgers School of Engineering Outstanding Graduate Student Award. Well done!
 
                         
                     </div>
@@ -415,7 +587,7 @@
                 <div class="news-item">
                     <div class="news-date">April 29, 2026</div>
                     <div class="news-content">
-                        Our lab receives a Rutgers Research Council Individual Fulcrum Award. Thank you for the support! 
+                        Our lab receives a Rutgers Research Council Individual Fulcrum Award. Thank you for the support!
 
                         
                     </div>
@@ -431,8 +603,8 @@
                     <div class="news-photos">
                 
                         <div class="news-photo">
-                            <img src="assets/2026_apr_jean_aresty.jpg" alt="Jean at Annual Aresty Symposium">
-                            <p class="caption">Jean at Annual Aresty Symposium</p>
+                            <img src="assets/2026_apr_jean_aresty.jpg" alt="">
+                            
                         </div>
                     
                     </div>
@@ -444,7 +616,7 @@
                 <div class="news-item">
                     <div class="news-date">February 19, 2026</div>
                     <div class="news-content">
-                        Mansi presents her work at the Biophysical Society Annual Meeting in San Francisco, supported by  her NIH Training Fellowship and the Rutgers SGS Research & Travel Award. Thank you for the support! 
+                        Mansi presents her work at the Biophysical Society Annual Meeting in San Francisco, supported by her NIH Training Fellowship and the Rutgers SGS Research & Travel Award. Thank you for the support!
 
                         
                     </div>
@@ -462,9 +634,9 @@
             
 
                 <div class="news-item">
-                    <div class="news-date">November 05, 2025</div>
+                    <div class="news-date">November 5, 2025</div>
                     <div class="news-content">
-                        Our group presents at the AIChE Annual Meeting in Boston. Bri and Samiyah present posters, and  Mansi gives her first conference talk (and then proceeds to give the talk two more times in November here at Rutgers).
+                        Our group presents at the AIChE Annual Meeting in Boston. Bri and Samiyah present posters, and Mansi gives her first conference talk (and then proceeds to give the talk two more times in November here at Rutgers).
 
                         
                     </div>
@@ -474,7 +646,7 @@
                 <div class="news-item">
                     <div class="news-date">May 19, 2025</div>
                     <div class="news-content">
-                        Welcome Kaelyn and Jean to the group! Julietta joins us for the summer from Georgia Tech! 
+                        Welcome Kaelyn and Jean to the group! Julietta joins us for the summer from Georgia Tech!
 
                         
                     </div>
@@ -484,14 +656,14 @@
                 <div class="news-item">
                     <div class="news-date">April 25, 2025</div>
                     <div class="news-content">
-                        Bri presents her Aresty work at the CBE Undergraduate Symposium, AIChE Mid-Atlantic Regional  Conference, and at the Aresty Undergraduate Symposium.
+                        Bri presents her Aresty work at the CBE Undergraduate Symposium, AIChE Mid-Atlantic Regional Conference, and at the Aresty Undergraduate Symposium.
 
                         
                     <div class="news-photos">
                 
                         <div class="news-photo">
-                            <img src="assets/2025_apr_bri_regional_aiche.jpg" alt="Bri at AIChE Mid-Atlantic Student Conference">
-                            <p class="caption">Bri at AIChE Mid-Atlantic Student Conference</p>
+                            <img src="assets/2025_apr_bri_regional_aiche.jpg" alt="Bri at AIChE Mid-Atlantic Student Regional Conference">
+                            <p class="caption">Bri at AIChE Mid-Atlantic Student Regional Conference</p>
                         </div>
                     
                     </div>
@@ -503,7 +675,7 @@
                 <div class="news-item">
                     <div class="news-date">February 17, 2025</div>
                     <div class="news-content">
-                        Our lab receives a New Jersey Health Foundation grant. Thank you for the support! 
+                        Our lab receives a New Jersey Health Foundation grant. Thank you for the support!
 
                         
                     </div>
@@ -536,7 +708,7 @@
                 <div class="news-item">
                     <div class="news-date">September 25, 2024</div>
                     <div class="news-content">
-                        We welcome Ben, Samiyah, and Bri to the group this Fall!  Mansi and Ben pass their prelims! Mansi finishes her first year and is awarded an NIH Biotech Training Fellowship!
+                        We welcome Ben, Samiyah, and Bri to the group this Fall! Mansi and Ben pass their prelims! Mansi finishes her first year and is awarded an NIH Biotech Training Fellowship!
 
                         
                     </div>
@@ -546,7 +718,7 @@
                 <div class="news-item">
                     <div class="news-date">July 29, 2024</div>
                     <div class="news-content">
-                        Collaboration begins with Colgate-Palmolive. Thank you for the support! 
+                        Collaboration begins with Colgate-Palmolive. Thank you for the support!
 
                         
                     </div>
@@ -554,9 +726,9 @@
             
 
                 <div class="news-item">
-                    <div class="news-date">January 08, 2024</div>
+                    <div class="news-date">January 8, 2024</div>
                     <div class="news-content">
-                        Welcome Mansi, our first student! 
+                        Welcome Mansi, our first student!
 
                         
                     </div>
@@ -564,43 +736,230 @@
             
 
                 <div class="news-item">
-                    <div class="news-date">September 06, 2023</div>
+                    <div class="news-date">September 6, 2023</div>
                     <div class="news-content">
-                        Ashley Guo joins the Department of Chemical and Biochemical Engineering at Rutgers as  Assistant Professor.
+                        Ashley Guo joins the Department of Chemical and Biochemical Engineering at Rutgers as Assistant Professor.
 
                         
                     </div>
                 </div>
             
         </section>
+
+        <section id="publications">
+            <h2>Publications</h2>
+            
+                <p class="scholar-note">
+                    * denotes equal contribution; † denotes corresponding author
+                </p>
+            
+                <div class="pub-item">
+                    <div class="pub-number">#13</div>
+                    
+                    <div class="pub-details">
+                        <h4 class="pub-title">An Information-theoretic Collective Variable for Capturing Entropy</h4>
+                        <p class="pub-authors">Guo, A.Z.<sup>†</sup>, Chang, K., Corrente, N.J.</p>
+                        <p class="pub-citation"><em>Molecular Systems Design & Engineering</em> (2026)</p>
+                        
+                    <a class="pub-doi" href="https://doi.org/10.1039/D6ME00083E"
+                       target="_blank" rel="noopener">DOI: 10.1039/D6ME00083E</a>
+                
+                    </div>
+                </div>
+            
+                <div class="pub-item">
+                    <div class="pub-number">#12</div>
+                    
+                    <div class="pub-details">
+                        <h4 class="pub-title">WIP: Development of a Chemical Engineering Activity for First-Year Engineering Students</h4>
+                        <p class="pub-authors">Corrente, N.J., Barillas, K., Brown, P.R., Buettner, H.M., Guo, A.Z., Konczynski, J., Mont, A.J., Shapley, N.C.</p>
+                        <p class="pub-citation"><em>ASEE</em> (2026)</p>
+                        
+                    <a class="pub-doi" href="https://doi.org/10.18260/1-2--60886"
+                       target="_blank" rel="noopener">DOI: 10.18260/1-2--60886</a>
+                
+                    </div>
+                </div>
+            
+                <div class="pub-item">
+                    <div class="pub-number">#11</div>
+                    
+                    <div class="pub-details">
+                        <h4 class="pub-title">Diffusion in Nonequilibrium Two-Dimensional Crystals</h4>
+                        <p class="pub-authors">Guo, A.Z.*<sup>†</sup>, Wilken, S.*, Levine, D., Chaikin, P.M.</p>
+                        <p class="pub-citation"><em>Physical Review E</em> (2026) 113:044108</p>
+                        
+                    <a class="pub-doi" href="https://doi.org/10.1103/qqhm-98vn"
+                       target="_blank" rel="noopener">DOI: 10.1103/qqhm-98vn</a>
+                
+                    </div>
+                </div>
+            
+                <div class="pub-item">
+                    <div class="pub-number">#10</div>
+                    
+                    <div class="pub-details">
+                        <h4 class="pub-title">Dynamical Approach to the Jamming Problem</h4>
+                        <p class="pub-authors">Wilken, S.*, Guo, A.Z.*, Levine, D., Chaikin, P.M.</p>
+                        <p class="pub-citation"><em>Physical Review Letters</em> (2023) 131:238202</p>
+                        
+                    <a class="pub-doi" href="https://doi.org/10.1103/PhysRevLett.131.238202"
+                       target="_blank" rel="noopener">DOI: 10.1103/PhysRevLett.131.238202</a>
+                
+                    </div>
+                </div>
+            
+                <div class="pub-item">
+                    <div class="pub-number">#9</div>
+                    
+                    <div class="pub-details">
+                        <h4 class="pub-title">Harnessing Peptide Binding to Capture and Reclaim Phosphate</h4>
+                        <p class="pub-authors">Fowler, W.C., Deng, C., Griffen, G.M., Teodoro, T., Guo, A.Z., Zaiden, M., Gottlieb, M., de Pablo, J.J., Tirrell, M.V.</p>
+                        <p class="pub-citation"><em>J. Am. Chem. Soc.</em> (2021) 143:4440-4450</p>
+                        
+                    <a class="pub-doi" href="https://doi.org/10.1021/jacs.1c01241"
+                       target="_blank" rel="noopener">DOI: 10.1021/jacs.1c01241</a>
+                
+                    </div>
+                </div>
+            
+                <div class="pub-item">
+                    <div class="pub-number">#8</div>
+                    
+                    <div class="pub-details">
+                        <h4 class="pub-title">Combined Force-Frequency Sampling for Simulation of Systems Having Rugged Free Energy Landscapes</h4>
+                        <p class="pub-authors">Sevgen, E., Guo, A.Z., Sidky, H., Whitmer, J., de Pablo, J.</p>
+                        <p class="pub-citation"><em>J. Chem. Theory Comput.</em> (2020) 16:1448-1455</p>
+                        
+                    <a class="pub-doi" href="https://doi.org/10.1021/acs.jctc.9b00883"
+                       target="_blank" rel="noopener">DOI: 10.1021/acs.jctc.9b00883</a>
+                
+                    </div>
+                </div>
+            
+                <div class="pub-item">
+                    <div class="pub-number">#7</div>
+                    
+                    <div class="pub-details">
+                        <h4 class="pub-title">Free Energy of Metal Organic Framework Self-Assembly</h4>
+                        <p class="pub-authors">Colón, Y.J., Guo, A.Z., Antony, L.B., Hoffmann, K.Q., de Pablo, J.J.</p>
+                        <p class="pub-citation"><em>J. Chem. Phys.</em> (2019) 150:104502</p>
+                        
+                    <a class="pub-doi" href="https://doi.org/10.1063/1.5063588"
+                       target="_blank" rel="noopener">DOI: 10.1063/1.5063588</a>
+                
+                    </div>
+                </div>
+            
+                <div class="pub-item">
+                    <div class="pub-number">#6</div>
+                    
+                    <div class="pub-details">
+                        <h4 class="pub-title">Extracting Collective Motions Underlying Nucleosome Dynamics via the Diffusion Map</h4>
+                        <p class="pub-authors">Guo, A.Z., Lequieu, J., de Pablo, J.J.</p>
+                        <p class="pub-citation"><em>J. Chem. Phys.</em> (2019) 150:054902</p>
+                        
+                    <a class="pub-doi" href="https://doi.org/10.1063/1.5063851"
+                       target="_blank" rel="noopener">DOI: 10.1063/1.5063851</a>
+                
+                    </div>
+                </div>
+            
+                <div class="pub-item">
+                    <div class="pub-number">#5</div>
+                    
+                    <div class="pub-details">
+                        <h4 class="pub-title">Early-stage Human Islet Amyloid Polypeptide Aggregation: Mechanisms Behind Dimer Formation</h4>
+                        <p class="pub-authors">Guo, A.Z., Fluitt, A.M., de Pablo, J.J.</p>
+                        <p class="pub-citation"><em>J. Chem. Phys.</em> (2018) 149:025101</p>
+                        
+                    <a class="pub-doi" href="https://doi.org/10.1063/1.5033458"
+                       target="_blank" rel="noopener">DOI: 10.1063/1.5033458</a>
+                
+                    </div>
+                </div>
+            
+                <div class="pub-item">
+                    <div class="pub-number">#4</div>
+                    
+                    <div class="pub-details">
+                        <h4 class="pub-title">Adaptive Enhanced Sampling by Force-Biasing Using Neural Networks</h4>
+                        <p class="pub-authors">Guo, A.Z.*, Sevgen, E.*, Sidky, H., Whitmer, J.K., Hubbell, J.A., de Pablo, J.J.</p>
+                        <p class="pub-citation"><em>J. Chem. Phys.</em> (2018) 148:134108</p>
+                        
+                    <a class="pub-doi" href="https://doi.org/10.1063/1.5020733"
+                       target="_blank" rel="noopener">DOI: 10.1063/1.5020733</a>
+                
+                    </div>
+                </div>
+            
+                <div class="pub-item">
+                    <div class="pub-number">#3</div>
+                    
+                    <div class="pub-details">
+                        <h4 class="pub-title">SSAGES: Software Suite for Advanced General Ensemble Simulations</h4>
+                        <p class="pub-authors">Sidky, H., Colón, Y.J., Helfferich, J., Sikora, B.J., Bezik, C., Chu, W., Giberti, F., Guo, A.Z., Jiang, X., Lequieu, J., Li, J., Moller, J., Quevillon, M.J., Rahimi, M., Ramezani-Dakhel, H., Rathee, V.S., Reid, D.R., Sevgen, E., Thapar, V., Webb, M.A., Whitmer, J.K., de Pablo, J.J.</p>
+                        <p class="pub-citation"><em>J. Chem. Phys.</em> (2018) 148:044104</p>
+                        
+                    <a class="pub-doi" href="https://doi.org/10.1063/1.5008853"
+                       target="_blank" rel="noopener">DOI: 10.1063/1.5008853</a>
+                
+                    </div>
+                </div>
+            
+                <div class="pub-item">
+                    <div class="pub-number">#2</div>
+                    
+                    <div class="pub-details">
+                        <h4 class="pub-title">Spherical Nematic Shell with Prolate Ellipsoidal Core</h4>
+                        <p class="pub-authors">Sadati, M., Zhou, Y., Melchert, D., Guo, A., Martinez-Gonzalez, J.A., Roberts, T.F., Zhang, R., de Pablo, J.J.</p>
+                        <p class="pub-citation"><em>Soft Matter</em> (2017) 13:7465-7472</p>
+                        
+                    <a class="pub-doi" href="https://doi.org/10.1039/C7SM01403A"
+                       target="_blank" rel="noopener">DOI: 10.1039/C7SM01403A</a>
+                
+                    </div>
+                </div>
+            
+                <div class="pub-item">
+                    <div class="pub-number">#1</div>
+                    
+                    <div class="pub-details">
+                        <h4 class="pub-title">Mesoscale Structure of Chiral Nematic Shells</h4>
+                        <p class="pub-authors">Zhou, Y., Guo, A., Zhang, R., Armas-Perez, J.C., Martinez-González, J.A., Rahimi, M., Sadati, M., de Pablo, J.J.</p>
+                        <p class="pub-citation"><em>Soft Matter</em> (2016) 12:8983-8989</p>
+                        
+                    <a class="pub-doi" href="https://doi.org/10.1039/c6sm01284a"
+                       target="_blank" rel="noopener">DOI: 10.1039/c6sm01284a</a>
+                
+                    </div>
+                </div>
+            
+        </section>
     </main>
 
-    <!-- Back to top button -->
-    <a href="#" class="back-to-top" id="back-to-top">↑</a>
-
     <script>
-        // Back to top button functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            var backToTopButton = document.getElementById('back-to-top');
-            
-            // Show button when user scrolls down 200px
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 200) {
-                    backToTopButton.style.display = 'block';
-                } else {
-                    backToTopButton.style.display = 'none';
+        // Highlight the nav link for whichever section is in view
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.navigation a');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach((link) => {
+                        link.classList.toggle(
+                            'active',
+                            link.getAttribute('href') === '#' + id
+                        );
+                    });
                 }
             });
-            
-            // Smooth scroll to top when clicked
-            backToTopButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        });
+        }, { rootMargin: '-40% 0px -55% 0px' });
+
+        sections.forEach((s) => observer.observe(s));
     </script>
+	<script data-goatcounter="https://guo-group.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

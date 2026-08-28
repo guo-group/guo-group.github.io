@@ -4,273 +4,394 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{lab_name}}</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/IBM-Plex-Mono/1.2.3/font-family/css/ibm-plex-mono.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: {{bg_color}};
-            --text-color: {{text_color}};
+            --bg: {{bg_color}};
+            --text: {{text_color}};
             --accent: {{accent_color}};
             --secondary: {{secondary_color}};
+            --header-font: 'IBM Plex Mono', monospace;
+            --body-font: Helvetica, Arial, sans-serif;
+            --sidebar-width: 13rem;
         }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
 
         body {
-            font-family: '{{body_font}}', sans-serif;
-            font-weight: 300;
-            line-height: 1.7;
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 0 20px;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            position: relative; /* For the back-to-top button positioning */
-            padding-bottom: 60px; /* Space for the back-to-top button */
+            margin: 0;
+            background: var(--bg);
+            color: var(--text);
+            font-family: var(--body-font);
+            line-height: 1.6;
+			font-weight: 300;
         }
 
-        .header {
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 20px;
-            margin-bottom: 20px;
-        }
-
-        .header-image {
-            position: absolute;
-            top: 0;
-            right: 0;
-            max-width: 250px;
-            max-height: 250px;
-            object-fit: contain;
-        }
-
-        h1, h2, h3, nav {
-            font-family: '{{header_font}}', monospace;
+        h1, h2, h3, h4 {
+            font-family: var(--header-font);
+            color: var(--text);
             font-weight: 500;
         }
 
-        h1 {
-            font-size: 1.8em;
-            margin-bottom: 0.5em;
+        a { color: var(--accent); }
+
+        /* ---------- Sidebar navigation ---------- */
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: var(--sidebar-width);
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            padding: 2rem 1.5rem;
+            background: var(--bg);
+            border-right: 1px solid rgba(0, 0, 0, 0.08);
+            overflow-y: auto;
+        }
+
+		.sidebar .lab-name {
+    		font-family: var(--header-font);
+    		font-size: 1.5rem;        /* was 1.05rem */
+    		font-weight: 700;         /* was 600 */
+    		line-height: 1.25;
+    		margin-bottom: 2rem;      
+    		color: #CC0033;
+    		text-decoration: none;
+		}
+
+        /*.sidebar .lab-name {
+            font-family: var(--header-font);
+            font-size: 1.05rem;
+            font-weight: 600;
+            line-height: 1.35;
+            margin-bottom: 1.5rem;
             color: #CC0033;
+            text-decoration: none;
+        }*/
+
+        .navigation {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
         }
 
-        /* Rest of the existing styles remain the same */
-        h2 {
-            font-size: 1.3em;
-            margin-top: 2em;
-            margin-bottom: 1em;
+        .navigation a {
+            font-family: var(--header-font);
+            font-size: 0.95rem;
+            text-decoration: none;
+            color: var(--secondary);
+            padding: 0.25rem 0;
+            border-left: 2px solid transparent;
+            padding-left: 0.75rem;
+            transition: color 0.15s ease, border-color 0.15s ease;
         }
 
-        nav {
-            margin: 30px 0;
-        }
-
-        /* Base styles for all links */
-        a {
+        .navigation a:hover {
             color: var(--accent);
-            text-decoration: none;
-            transition: color 0.2s ease;
         }
 
-        a:hover {
-            color: #CC0033;
-            text-decoration: underline;
+        .navigation a.active {
+            color: var(--accent);
+            border-left-color: var(--accent);
         }
 
-        /* Override styles specifically for navigation links */
-        nav a {
-            color: var(--text-color);
-            margin-right: 20px;
-            text-decoration: none;
+        /* ---------- Main content ---------- */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            max-width: 58rem;
+            padding: 3rem 2.5rem 6rem;
         }
 
-        nav a:hover {
-            color: #CC0033;
-            text-decoration: none;
+        .header-image {
+            width: 100%;
+            max-height: 22rem;
+            object-fit: cover;
+            border-radius: 6px;
+            margin: 0 0 2rem;
         }
 
-        .intro {
-            font-size: 1.1em;
-            max-width: 42em;
-            margin: 2em 0;
+        .description {
+            font-size: 1.05rem;
+            color: var(--text);
+            margin-bottom: 3rem;
         }
 
-        .research-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin: 2em 0;
+        section {
+            scroll-margin-top: 2rem;
+            margin-bottom: 4rem;
         }
 
+        section > h2 {
+            font-size: 1.6rem;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 0.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        /* ---------- Research ---------- */
         .research-area {
-            background: white;
-            padding: 25px;
-            border-radius: 4px;
+            margin-bottom: 1.5rem;
         }
 
         .research-area h3 {
             color: var(--accent);
-            margin: 0 0 15px 0;
-            font-size: 1em;
+            margin-bottom: 0.3rem;
+            font-size: 1.15rem;
         }
 
-        .news-item {
-            margin-bottom: 1.5em; /* Reduced from 2em */
-        }
+        .research-area p { 
+			margin-top: 0; 
+		}
 
-        .news-date {
+        /* ---------- Team ---------- */
+        #team h3 {
+            font-size: 1.25rem;
+            margin-top: 2rem;
             color: var(--secondary);
-            font-size: 0.9em;
-            margin-bottom: 0.3em; /* Reduced from 0.5em */
-        }
-
-        .news-content {
-            margin: 0; /* Remove any default margins */
-        }
-
-        .news-photos {
-            display: flex;
-            flex-direction: row;
-            overflow-x: auto;  /* Allow horizontal scrolling */
-            gap: 8px;
-            margin: 10px 0 0 0; /* Reduced top margin from 20px to 10px */
-            padding: 0; /* Remove all padding */
-            -webkit-overflow-scrolling: touch;  /* Smooth scrolling on iOS */
-            scrollbar-width: thin;  /* Thin scrollbar on Firefox */
-            scrollbar-color: rgba(0,0,0,0.2) transparent;  /* Scrollbar color */
-            line-height: 0; /* Remove line height spacing */
-        }
-
-        .news-photo {
-            flex: 0 0 auto;
-            width: 250px;
-            margin: 0; /* Remove all margins */
-            line-height: normal; /* Reset line height for captions */
-        }
-
-        .news-photo img {
-            width: 250px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 4px;
-            display: block; /* Prevents default inline spacing */
-            margin: 0; /* Ensure no margins */
-        }
-
-        .news-photo .caption {
-            font-size: 0.9em;
-            color: var(--secondary);
-            margin-top: 4px; /* Reduced from 8px */
-            margin-bottom: 0;
-            padding: 0;
-            text-align: center;
         }
 
         .team-member {
-            margin: 30px 0;
-            display: grid;
-            grid-template-columns: 180px 1fr;
-            gap: 30px;
-            align-items: start;
+            display: flex;
+            gap: 1.25rem;
+            margin-bottom: 1.75rem;
+            align-items: flex-start;
         }
 
         .team-member-image {
-            width: 180px;
-            height: auto;
-            object-fit: contain;
+            width: 7rem;
+            height: 7rem;
+            object-fit: cover;
+            border-radius: 6px;
+            flex-shrink: 0;
+            background: rgba(0, 0, 0, 0.05);
         }
 
-        .member-info {
-            flex: 1;
+        .member-info h4 {
+            margin: 0 0 0.2rem;
+            font-size: 1.1rem;
         }
 
-        .member-role {
-            color: var(--secondary);
-            font-size: 0.95em;
+        .member-info p { margin: 0.15rem 0; }
+
+        .member-info .role {
+            color: var(--accent);
+            font-style: italic;
         }
 
-        .prospective-content {
-            margin: 30px 0;
+        .member-links a {
+            font-family: var(--header-font);
+            font-size: 0.9rem;
+        }
+
+        .alumni-list p {
+            margin: 0.3rem 0;
+            color: var(--text);
         }
 
         .prospective-content p {
-            margin-bottom: 1em;
+            margin-bottom: 1rem;
         }
 
-        /* Back to top button styles */
-        .back-to-top {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: var(--accent);
-            color: white;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            text-align: center;
-            line-height: 50px;
-            font-size: 20px;
+        /* ---------- News ---------- */
+        .news-item {
+            display: flex;
+            gap: 1.5rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+        }
+
+        .news-date {
+            font-family: var(--header-font);
+            font-size: 0.85rem;
+            color: var(--secondary);
+            flex-shrink: 0;
+            width: 10rem;
+            white-space: nowrap;
+            padding-top: 0.1rem;
+        }
+
+        .news-content { flex: 1; }
+
+        .news-content > :first-child { margin-top: 0; }
+
+        .news-photos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 0.75rem;
+        }
+
+        .news-photo {
+            width: 12rem;
+        }
+
+        .news-photo img {
+            width: 100%;
+            border-radius: 4px;
+            display: block;
+        }
+
+        .news-photo .caption {
+            font-size: 0.8rem;
+            color: var(--secondary);
+            margin: 0.3rem 0 0;
+        }
+
+        /* ---------- Publications ---------- */
+        .scholar-note {
+            font-size: 0.95rem;
+            color: var(--secondary);
+            margin-bottom: 2rem;
+        }
+
+        .pub-item {
+            display: flex;
+            gap: 1.25rem;
+            padding: 1.25rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+            align-items: flex-start;
+        }
+
+        .pub-number {
+            font-family: var(--header-font);
+            font-size: 0.85rem;
+            color: var(--accent);
+            flex-shrink: 0;
+            width: 2.5rem;
+            padding-top: 0.15rem;
+        }
+
+        .pub-image {
+            flex-shrink: 0;
+            width: 8rem;
+        }
+
+        .pub-image img {
+            width: 100%;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            display: block;
+        }
+
+        .pub-details {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .pub-title {
+            margin: 0 0 0.35rem;
+            font-size: 1.05rem;
+            line-height: 1.35;
+        }
+
+        .pub-authors {
+            margin: 0 0 0.35rem;
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+
+        .pub-citation {
+            margin: 0 0 0.4rem;
+            font-size: 0.9rem;
+            color: var(--secondary);
+        }
+
+        .pub-doi {
+            font-family: var(--header-font);
+            font-size: 0.85rem;
             text-decoration: none;
-            opacity: 0.7;
-            transition: opacity 0.3s;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-            z-index: 1000;
-            display: none; /* Initially hidden */
         }
 
-        .back-to-top:hover {
-            opacity: 1;
-            text-decoration: none;
+        .pub-doi:hover {
+            text-decoration: underline;
         }
 
-        @media (max-width: 600px) {
-            .team-member {
-                grid-template-columns: 1fr;
-                align-items: center;
-            }
-            .team-member-image {
-                max-width: 300px;
+        /* ---------- Mobile ---------- */
+        @media (max-width: 720px) {
+            .sidebar {
+                position: sticky;
                 height: auto;
-                margin: 0 auto 20px;
+                width: 100%;
+                flex-direction: row;
+                align-items: center;
+                flex-wrap: wrap;
+                gap: 1rem;
+                border-right: none;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+                padding: 1rem 1.25rem;
+                z-index: 10;
             }
-            .header-image {
-                position: static;
-                display: block;
-                margin: 20px auto;
-                max-width: 150px;
+
+            .sidebar .lab-name {
+                margin-bottom: 0;
+                font-size: 0.95rem;
+                flex-basis: 100%;
             }
-            .back-to-top {
-                width: 40px;
-                height: 40px;
-                line-height: 40px;
-                font-size: 16px;
+
+            .navigation {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 1.25rem;
             }
+
+            .navigation a {
+                border-left: none;
+                padding-left: 0;
+            }
+
+            .navigation a.active {
+                border-left: none;
+                border-bottom: 2px solid var(--accent);
+            }
+
+            .main-content {
+                margin-left: 0;
+                padding: 2rem 1.25rem 5rem;
+            }
+
+            .team-member { flex-direction: column; }
+
+            .news-item { flex-direction: column; gap: 0.35rem; }
+
+            .news-date { width: auto; }
+
+            .pub-item {
+                flex-wrap: wrap;
+                gap: 0.75rem;
+            }
+            .pub-number { width: auto; }
+            .pub-image { width: 6rem; }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="header">
-            <h1>{{lab_name}}</h1>
-            {{header_image}}
-        </div>
-        <nav>
+    <aside class="sidebar">
+        <a href="#top" class="lab-name">{{lab_name}}</a>
+        <nav class="navigation">
             {{navigation}}
         </nav>
-    </header>
+    </aside>
 
-    <main>
-        <p class="intro">
-            {{description}}
-        </p>
+    <main class="main-content" id="top">
+        {{header_image}}
+        <p class="description">{{description}}</p>
 
         <section id="research">
             <h2>Research</h2>
-            <div class="research-grid">
-                {{research}}
-            </div>
+            {{research}}
         </section>
+
+		
+		<section id="talks">
+    		{{talks}}
+		</section>
+		
 
         <section id="team">
             {{team}}
@@ -280,34 +401,35 @@
             <h2>News</h2>
             {{news}}
         </section>
+
+        <section id="publications">
+            <h2>Publications</h2>
+            {{publications}}
+        </section>
     </main>
 
-    <!-- Back to top button -->
-    <a href="#" class="back-to-top" id="back-to-top">↑</a>
-
     <script>
-        // Back to top button functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            var backToTopButton = document.getElementById('back-to-top');
-            
-            // Show button when user scrolls down 200px
-            window.addEventListener('scroll', function() {
-                if (window.pageYOffset > 200) {
-                    backToTopButton.style.display = 'block';
-                } else {
-                    backToTopButton.style.display = 'none';
+        // Highlight the nav link for whichever section is in view
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.navigation a');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach((link) => {
+                        link.classList.toggle(
+                            'active',
+                            link.getAttribute('href') === '#' + id
+                        );
+                    });
                 }
             });
-            
-            // Smooth scroll to top when clicked
-            backToTopButton.addEventListener('click', function(e) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            });
-        });
+        }, { rootMargin: '-40% 0px -55% 0px' });
+
+        sections.forEach((s) => observer.observe(s));
     </script>
+	<script data-goatcounter="https://guo-group.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>

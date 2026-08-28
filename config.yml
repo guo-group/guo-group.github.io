@@ -2,29 +2,70 @@
 lab_name: Guo Group @ Rutgers University
 
 description: >
-  Our lab uses molecular simulations to understand and design functional soft materials, 
-  with global sustainability and health challenges in mind. We work at the intersection 
-  of molecular simulations, machine learning, and information theory to discover and
-  develop tunable organization, structure, and function. 
+  Our lab uses molecular simulation, information theory, and machine learning to 
+  understand and design functional soft materials, with global sustainability and 
+  health challenges in mind. We are especially drawn to molecular organization that 
+  is hard to characterize (whether from disorder, irregularity, or the lack of an 
+  obvious order parameter) and to finding new ways to measure and tune that organization
+  in service of function.
 
-header_image: claw.png
+header_image: claw.png            # need to swap with new pic once everyone is back
+                                  # remove temp line from site-generator
 
-# Navigation  
+# Link to lab / PI Google Scholar profile (shown at top of Publications)
+scholar_url: https://scholar.google.com/citations?user=ef53_UAAAAAJ&sortby=pubdate
+
+# Navigation
 nav_items:
   - Research
   - Team
   - News
+  - Publications
 
-# Research areas  
+# Research areas
 research_areas:
-  - title: Discovering Soft Materials for Sustainability
-    description: Designing bio-inspired materials for environmental challenges, focusing on peptide-based systems for nanoplastic capture from water.
-  
-  - title: Designing Self-Assembly Pathways
-    description: Understanding molecular organization and phase behavior in soft materials through molecular simulations.
-    
-  - title: Developing Molecular Design Tools
-    description: Creating computational approaches that combine molecular simulations with information theory to guide materials discovery.
+  - title: Quantifying Molecular Order from Information
+    description: >
+      We measure the intrinsic organization of molecular systems directly from 
+      configuration and trajectory data, drawing on information theory to capture 
+      order even when it isn't obvious to the eye or expressible as a conventional 
+      order parameter. We are exploring how such measures might serve as design 
+      variables for tuning molecular assemblies.
+
+  - title: Soft Materials for a Sustainable Environment
+    description: >
+      We design peptide-based materials that selectively bind pollutants,
+      with a current focus on sensing and capturing nanoplastics from water.
+
+  - title: Biomolecular Recognition and Assembly
+    description: >
+      We investigate the forces that drive binding and aggregation in biomolecular 
+      systems. We are especially interested in how assembly is shaped by disordered 
+      or irregular targets (e.g., nanoparticle surfaces, aggregation-prone proteins)
+      and how those interactions influence function.
+# pics?? do this later?
+
+# upcoming / find us at 
+# talks:
+#   - date: 2026-9-29
+#     speaker: TBD
+#     title:
+#     venue: 
+#   - date: 2026-11-10
+#     speaker: Ashley 
+#     title: 
+#     venue: AIChE Annual Meeting
+#   - date: 2026-11-11
+#     speaker: Mansi 
+#     title: 
+#     venue: AIChE Annual Meeting
+#   - date: 2027-3-1
+#     speaker: Ashley
+#     title: TBD
+#     venue: ACS Spring Meeting
+#   - date: 2027-9-1
+#     title: workshop TBA
+#     venue: TBA
 
 # Team members
 team:
@@ -34,16 +75,18 @@ team:
     image: ashley.jpg
     bio: |
       Assistant Professor, Department of Chemical & Biochemical Engineering
-    email: ashley.guo [at] rutgers [dot] edu 
+    email: ashley.guo [at] rutgers [dot] edu
     office: Engineering C-164
     links:
       - text: cv
         url: assets/cv.pdf
       - text: google scholar
         url: https://scholar.google.com/citations?user=ef53_UAAAAAJ&sortby=pubdate
+      - text: Rutgers CBE
+        url: https://cbe.rutgers.edu/ashley-guo
 
   phd_students:
-    - name: Mansi Gokani 
+    - name: Mansi Gokani
       image: mansi.jpg
       bio: |
         NIH Biotech Training Fellow, 2024-
@@ -52,7 +95,7 @@ team:
 
     - name: Benjamin Borow
       image: ben.jpg
-      bio: |  
+      bio: |
         M.S. Chemical and Biochemical Engineering, Rutgers University–New Brunswick, 2024
         B.S. Biomedical Engineering, Rutgers University–New Brunswick, 2023
       email: bb569 [at] rutgers [dot] edu
@@ -63,7 +106,7 @@ team:
       bio: |
         B.S. Chemical and Biochemical Engineering, Rutgers University-New Brunswick, 2025
       email: kc1228 [at] rutgers [dot] edu
-      
+
   undergraduates:
     - name: Brianna Fea
       image: bri.jpg
@@ -74,86 +117,103 @@ team:
 
     - name: Jean Chen
       image: jean.jpg
-      bio: | 
+      bio: |
         2025-2026 Aresty Research Assistant
         Rutgers CBE c/o 2028
       email: jc3188 [at] rutgers [dot] edu
 
     - name: Sophia Carlson
       image: sophia.jpg
-      bio: | 
+      bio: |
+        2026-2027 JJ Slade Scholar
         Rutgers CBE c/o 2027
-      email: sac457 [at] rutgers [dot] edu 
+      email: sac457 [at] rutgers [dot] edu
+
+    - name: Laasya Chintala
+      image: laasya.jpg
+      bio: |
+        2026 Aresty Summer Science Student
+        Rutgers Biological Sciences c/o 2029
+      email: lc1414 [at] rutgers [dot] edu
 
   alums:
+    - name: Bisneili Amaya (U. of Notre Dame CBE), summer visiting undergraduate, 2026
     - name: Samiyah Siddiqui, graduate research assistant, 2024-2025
     - name: Julietta Straviou (Georgia Tech CBE), summer visiting undergraduate, 2025
 
 # Prospectives
 prospective_students:
   paragraph1: >
-    We are seeking curious and motivated students who are interested in data- and information-driven 
-    modeling of biomolecules, polymers, and colloids. Students should have a strong background and 
-    interest in the physical sciences and mathematics. Previous experience in computer programming 
+    We are seeking curious and motivated students who are interested in data- and information-driven
+    modeling of biomolecules, polymers, and colloids. Students should have a strong background and
+    interest in the physical sciences and mathematics. Previous experience in computer programming
     or molecular simulation is helpful but not required.
-  
-  paragraph2: >
-    Current and prospective Ph.D. students are encouraged to contact Prof. Guo directly to discuss 
-    potential opportunities and research interests. Prospective graduate students should apply to the 
-    <a href="https://cbe.rutgers.edu/admissions/graduate-cbe">Rutgers CBE program</a>. 
 
-  paragraph3: > 
-    Highly motivated undergraduates are welcome to inquire about opportunities by (1) emailing Prof. 
-    Guo with a copy of their resume and details on their relevant coursework, or (2) applying through 
-    the <a href="https://aresty.rutgers.edu/">Aresty Research Center</a>. We 
-    appreciate the recent influx of high schoolers interested in doing research with us; high school 
-    researchers must join the lab through organized programs so that they can receive sufficient 
+  paragraph2: >
+    Current and prospective Ph.D. students are encouraged to contact Prof. Guo directly to discuss
+    potential opportunities and research interests. Prospective graduate students should apply to the
+    <a href="https://cbe.rutgers.edu/admissions/graduate-cbe">Rutgers CBE program</a>.
+
+  paragraph3: >
+    Highly motivated undergraduates are welcome to inquire about opportunities by (1) emailing Prof.
+    Guo with a copy of their resume and details on their relevant coursework, or (2) applying through
+    the <a href="https://aresty.rutgers.edu/">Aresty Research Center</a>. We
+    appreciate the recent influx of high schoolers interested in doing research with us; high school
+    researchers must join the lab through organized programs so that they can receive sufficient
     mentorship and structure. Undergraduates and high school researchers are expected to attend weekly
     group meetings and actively contribute to them.
 
 # News items
 news:
-  - date: 2026-05-14
-    content: > 
-      Mansi is awarded the 2026 Rutgers CBE Distinguished Service Award! 
-  - date: 2026-05-7
+  - date: 2026-07-30
     content: >
-      Kaelyn is awarded a Rutgers School of Engineering Outstanding Graduate Student Award. Well done! 
+      Laasya presents her summer research at the Aresty Summer Research Symposium.
+    photos:
+      - path: 2026_jul_laasya_aresty.jpg
+  - date: 2026-06-05
+    content: >
+      Kaelyn presents her work at the 2nd Annual Rutgers Chemical Physics (RCP) Symposium.
+    photos:
+      - path: 2026_jun_kaelyn_rcp.jpg
+  - date: 2026-05-14
+    content: >
+      Mansi is awarded the 2026 Rutgers CBE Distinguished Service Award!
+  - date: 2026-05-07
+    content: >
+      Kaelyn is awarded a Rutgers School of Engineering Outstanding Graduate Student Award. Well done!
   - date: 2026-04-29
-    content: > 
-      Our lab receives a Rutgers Research Council Individual Fulcrum Award. Thank you for the support! 
+    content: >
+      Our lab receives a Rutgers Research Council Individual Fulcrum Award. Thank you for the support!
   - date: 2026-04-24
-    content: > 
+    content: >
       Jean presents her Aresty RA work at the Aresty Undergraduate Research Symposium. Nice work!
     photos:
       - path: 2026_apr_jean_aresty.jpg
-        caption: Jean at Annual Aresty Symposium
   - date: 2026-02-19
     content: >
-      Mansi presents her work at the Biophysical Society Annual Meeting in San Francisco, supported by 
-      her NIH Training Fellowship and the Rutgers SGS Research & Travel Award. Thank you for the support! 
+      Mansi presents her work at the Biophysical Society Annual Meeting in San Francisco, supported by
+      her NIH Training Fellowship and the Rutgers SGS Research & Travel Award. Thank you for the support!
   - date: 2025-12-10
     content: >
       Mansi passes her proposal defense and becomes our group's first PhD candidate!
-  - date: 2025-11-5
+  - date: 2025-11-05
     content: >
-      Our group presents at the AIChE Annual Meeting in Boston. Bri and Samiyah present posters, and 
+      Our group presents at the AIChE Annual Meeting in Boston. Bri and Samiyah present posters, and
       Mansi gives her first conference talk (and then proceeds to give the talk two more times in November
       here at Rutgers).
   - date: 2025-05-19
     content: >
-      Welcome Kaelyn and Jean to the group! Julietta joins us for the summer from Georgia Tech! 
+      Welcome Kaelyn and Jean to the group! Julietta joins us for the summer from Georgia Tech!
   - date: 2025-04-25
     content: >
-      Bri presents her Aresty work at the CBE Undergraduate Symposium, AIChE Mid-Atlantic Regional 
+      Bri presents her Aresty work at the CBE Undergraduate Symposium, AIChE Mid-Atlantic Regional
       Conference, and at the Aresty Undergraduate Symposium.
     photos:
       - path: 2025_apr_bri_regional_aiche.jpg
-        caption: Bri at AIChE Mid-Atlantic Student Conference
+        caption: Bri at AIChE Mid-Atlantic Student Regional Conference
   - date: 2025-02-17
     content: >
-      Our lab receives a New Jersey Health Foundation grant. Thank you for the support! 
-
+      Our lab receives a New Jersey Health Foundation grant. Thank you for the support!
   - date: 2024-12-11
     content: >
     photos:
@@ -161,34 +221,152 @@ news:
         caption: Last full-house group meeting of 2024
       - path: 2024_dec_group_dinner.jpg
         caption: Group dinner
-
   - date: 2024-09-25
     content: >
-      We welcome Ben, Samiyah, and Bri to the group this Fall! 
+      We welcome Ben, Samiyah, and Bri to the group this Fall!
       Mansi and Ben pass their prelims! Mansi finishes her first year and is
       awarded an NIH Biotech Training Fellowship!
-
   - date: 2024-07-29
     content: >
-      Collaboration begins with Colgate-Palmolive. Thank you for the support! 
-
+      Collaboration begins with Colgate-Palmolive. Thank you for the support!
   - date: 2024-01-08
     content: >
-      Welcome Mansi, our first student! 
-
-  - date: 2023-09-06  
+      Welcome Mansi, our first student!
+  - date: 2023-09-06
     content: >
-      Ashley Guo joins the Department of Chemical and Biochemical Engineering at Rutgers as 
+      Ashley Guo joins the Department of Chemical and Biochemical Engineering at Rutgers as
       Assistant Professor.
 
-# Style customization  
+# Publications (newest first)
+publications:
+#   - number: 14
+#     title: "Spacing Over Sequence: Design Considerations for Polystyrene-binding Polypeptides"
+#     authors: "Gokani, M., Fea, B., Guo, A.Z."
+#     venue: ChemRxiv
+#     year: 2026
+#     doi: "10.26434/chemrxiv.15003887/v1"
+
+  - number: 13
+    title: "An Information-theoretic Collective Variable for Capturing Entropy"
+    authors: "Guo, A.Z.<sup>†</sup>, Chang, K., Corrente, N.J."
+    venue: "Molecular Systems Design & Engineering"
+    year: 2026
+    doi: "10.1039/D6ME00083E"
+    #image: "R.png"
+
+  - number: 12
+    title: "WIP: Development of a Chemical Engineering Activity for First-Year Engineering Students"
+    authors: "Corrente, N.J., Barillas, K., Brown, P.R., Buettner, H.M., Guo, A.Z., Konczynski, J., Mont, A.J., Shapley, N.C."
+    venue: "ASEE"
+    year: 2026
+    doi: "10.18260/1-2--60886"
+
+  - number: 11
+    title: "Diffusion in Nonequilibrium Two-Dimensional Crystals"
+    authors: "Guo, A.Z.*<sup>†</sup>, Wilken, S.*, Levine, D., Chaikin, P.M."
+    venue: "Physical Review E"
+    year: 2026
+    volume: "113"
+    pages: "044108"
+    doi: "10.1103/qqhm-98vn"
+
+  - number: 10
+    title: "Dynamical Approach to the Jamming Problem"
+    authors: "Wilken, S.*, Guo, A.Z.*, Levine, D., Chaikin, P.M."
+    venue: "Physical Review Letters"
+    year: 2023
+    volume: "131"
+    pages: "238202"
+    doi: "10.1103/PhysRevLett.131.238202"
+
+  - number: 9
+    title: "Harnessing Peptide Binding to Capture and Reclaim Phosphate"
+    authors: "Fowler, W.C., Deng, C., Griffen, G.M., Teodoro, T., Guo, A.Z., Zaiden, M., Gottlieb, M., de Pablo, J.J., Tirrell, M.V."
+    venue: "J. Am. Chem. Soc."
+    year: 2021
+    volume: "143"
+    pages: "4440-4450"
+    doi: "10.1021/jacs.1c01241"
+
+  - number: 8
+    title: "Combined Force-Frequency Sampling for Simulation of Systems Having Rugged Free Energy Landscapes"
+    authors: "Sevgen, E., Guo, A.Z., Sidky, H., Whitmer, J., de Pablo, J."
+    venue: "J. Chem. Theory Comput."
+    year: 2020
+    volume: "16"
+    pages: "1448-1455"
+    doi: "10.1021/acs.jctc.9b00883"
+
+  - number: 7
+    title: "Free Energy of Metal Organic Framework Self-Assembly"
+    authors: "Colón, Y.J., Guo, A.Z., Antony, L.B., Hoffmann, K.Q., de Pablo, J.J."
+    venue: "J. Chem. Phys."
+    year: 2019
+    volume: "150"
+    pages: "104502"
+    doi: "10.1063/1.5063588"
+
+  - number: 6
+    title: "Extracting Collective Motions Underlying Nucleosome Dynamics via the Diffusion Map"
+    authors: "Guo, A.Z., Lequieu, J., de Pablo, J.J."
+    venue: "J. Chem. Phys."
+    year: 2019
+    volume: "150"
+    pages: "054902"
+    doi: "10.1063/1.5063851"
+
+  - number: 5
+    title: "Early-stage Human Islet Amyloid Polypeptide Aggregation: Mechanisms Behind Dimer Formation"
+    authors: "Guo, A.Z., Fluitt, A.M., de Pablo, J.J."
+    venue: "J. Chem. Phys."
+    year: 2018
+    volume: "149"
+    pages: "025101"
+    doi: "10.1063/1.5033458"
+
+  - number: 4
+    title: "Adaptive Enhanced Sampling by Force-Biasing Using Neural Networks"
+    authors: "Guo, A.Z.*, Sevgen, E.*, Sidky, H., Whitmer, J.K., Hubbell, J.A., de Pablo, J.J."
+    venue: "J. Chem. Phys."
+    year: 2018
+    volume: "148"
+    pages: "134108"
+    doi: "10.1063/1.5020733"
+
+  - number: 3
+    title: "SSAGES: Software Suite for Advanced General Ensemble Simulations"
+    authors: "Sidky, H., Colón, Y.J., Helfferich, J., Sikora, B.J., Bezik, C., Chu, W., Giberti, F., Guo, A.Z., Jiang, X., Lequieu, J., Li, J., Moller, J., Quevillon, M.J., Rahimi, M., Ramezani-Dakhel, H., Rathee, V.S., Reid, D.R., Sevgen, E., Thapar, V., Webb, M.A., Whitmer, J.K., de Pablo, J.J."
+    venue: "J. Chem. Phys."
+    year: 2018
+    volume: "148"
+    pages: "044104"
+    doi: "10.1063/1.5008853"
+
+  - number: 2
+    title: "Spherical Nematic Shell with Prolate Ellipsoidal Core"
+    authors: "Sadati, M., Zhou, Y., Melchert, D., Guo, A., Martinez-Gonzalez, J.A., Roberts, T.F., Zhang, R., de Pablo, J.J."
+    venue: "Soft Matter"
+    year: 2017
+    volume: "13"
+    pages: "7465-7472"
+    doi: "10.1039/C7SM01403A"
+
+  - number: 1
+    title: "Mesoscale Structure of Chiral Nematic Shells"
+    authors: "Zhou, Y., Guo, A., Zhang, R., Armas-Perez, J.C., Martinez-González, J.A., Rahimi, M., Sadati, M., de Pablo, J.J."
+    venue: "Soft Matter"
+    year: 2016
+    volume: "12"
+    pages: "8983-8989"
+    doi: "10.1039/c6sm01284a"
+
+# Style customization
 style:
   colors:
     bg: "#faf4f0"
-    text: "#2d2625" 
-      #accent: "#c65d4f"
+    text: "#2d2625"
     accent: "#b44639"
     secondary: "#8e8279"
   fonts:
-    headers: "IBM Plex Mono"  
-    body: "Open Sans, Helvetica, Arial, sans-serif"
+    headers: "'IBM Plex Mono', monospace"
+    body: "'Open Sans', Helvetica, Arial, sans-serif"
