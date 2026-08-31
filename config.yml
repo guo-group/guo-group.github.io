@@ -100,12 +100,13 @@ team:
         B.S. Biomedical Engineering, Rutgers University–New Brunswick, 2023
       email: bb569 [at] rutgers [dot] edu
 
-  ms_students:
     - name: Kaelyn Chang
       image: kaelyn.jpg
       bio: |
         B.S. Chemical and Biochemical Engineering, Rutgers University-New Brunswick, 2025
       email: kc1228 [at] rutgers [dot] edu
+ 
+  ms_students: []
 
   undergraduates:
     - name: Brianna Fea
@@ -165,6 +166,11 @@ prospective_students:
 
 # News items
 news:
+  - date: 2026-08-31
+    content: > 
+      Kaelyn successfully defends her MS thesis! Congratulations! 
+    photos:
+      - path: 2026_aug_kaelyn_ms_defense.jpg
   - date: 2026-07-30
     content: >
       Laasya presents her summer research at the Aresty Summer Research Symposium.

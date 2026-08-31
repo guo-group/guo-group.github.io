@@ -147,6 +147,8 @@ class SiteGenerator:
 
         def create_member_section(title, members, is_pi=False):
             """Create HTML for a section of team members"""
+            if not members:
+                return ""                      # no members -> no heading, no section
             section_html = "<h3>{}</h3>\n".format(title)
             for member in members:
                 bio = process_bio(member['bio'])
@@ -219,9 +221,9 @@ class SiteGenerator:
         return "\n".join([
             "<h2>Team</h2>",
             create_member_section("Principal Investigator", [self.config["team"]["pi"]], is_pi=True),
-            create_member_section("PhD Students", self.config["team"]["phd_students"]),
-            create_member_section("MS Students", self.config["team"]["ms_students"]),
-            create_member_section("Undergraduate Researchers", self.config["team"]["undergraduates"]),
+            create_member_section("PhD Students",     self.config["team"].get("phd_students", [])),
+            create_member_section("MS Students",      self.config["team"].get("ms_students", [])),
+            create_member_section("Undergraduate Researchers", self.config["team"].get("undergraduates", [])),
             create_alumni_section("Lab Alumni", self.config["team"]["alums"]),
             prospective_section
         ])
