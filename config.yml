@@ -46,26 +46,15 @@ research_areas:
 # pics?? do this later?
 
 # upcoming / find us at 
-# talks:
-#   - date: 2026-9-29
-#     speaker: TBD
-#     title:
-#     venue: 
-#   - date: 2026-11-10
-#     speaker: Ashley 
-#     title: 
-#     venue: AIChE Annual Meeting
-#   - date: 2026-11-11
-#     speaker: Mansi 
-#     title: 
-#     venue: AIChE Annual Meeting
-#   - date: 2027-3-1
-#     speaker: Ashley
-#     title: TBD
-#     venue: ACS Spring Meeting
-#   - date: 2027-9-1
-#     title: workshop TBA
-#     venue: TBA
+talks:
+  - date: 2026-9-29
+    speaker: Kaelyn and Mansi
+    title: 
+    venue: posters at NJIT Molecular Simulation Workshop (Newark NJ)
+  - date: 2026-11-10
+    speaker: Ashley (11/10) and Mansi (11/11)
+    title: 
+    venue: talks at AIChE Annual Meeting (Minneapolis MN)
 
 # Team members
 team:
