@@ -155,6 +155,17 @@ prospective_students:
 
 # News items
 news:
+  - date: 2026-10-21
+    content: > 
+      Ben passes his proposal defense! 
+  - date: 2026-10-01
+    content: > 
+      We are honored to have our paper "An information-theoretic collective variable for configurational 
+      entropy" included in the MSDE Emerging Investigators Series.
+  - date: 2026-09-29
+    content: > 
+      Mansi and Kaelyn present posters at the 7th Molecular Simulations Workshop at NJIT. Ashley speaks 
+      on a panel at the workshop about training computational researchers. 
   - date: 2026-08-31
     content: > 
       Kaelyn successfully defends her MS thesis! Congratulations! 
@@ -242,7 +253,7 @@ publications:
 #     doi: "10.26434/chemrxiv.15003887/v1"
 
   - number: 13
-    title: "An Information-theoretic Collective Variable for Capturing Entropy"
+    title: "An information-theoretic collective variable for configurational entropy"
     authors: "Guo, A.Z.<sup>†</sup>, Chang, K., Corrente, N.J."
     venue: "Molecular Systems Design & Engineering"
     year: 2026
